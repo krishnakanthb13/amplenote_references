@@ -16,6 +16,8 @@ There are three ways to start.
 
 The recommended starting point is to **duplicate the Example AI plugin**. If you have Amplecap installed, visit the published plugin note and choose **"Duplicate note"** to copy it into your own account, then start editing.
 
+![Duplicate note option in Amplenote](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/bd3c348e-bf39-4cd9-8eb8-701ce2891540.png)
+
 ### Starting option: Use the embed repo
 
 If you want to render React components or arbitrary JavaScript, you can **fork the `amplenote-embed-starter` project** to leverage Amplenote's embedding framework.
@@ -38,6 +40,14 @@ Once your note defines a plugin, install and test it:
 4. If the plugin has settings, click the **gear icon** to configure them.
 
 The plugin icon appears **green when the plugin is valid** and **red when compilation fails**. As you edit the note, re-checking the icon color is the fastest way to know whether your latest change still compiles.
+
+![Add plugin selection list in Settings](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/81fc498e-e2ab-4281-a2fc-ee8499cbce28.png)
+
+![Plugin settings gear icon](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/91599d8e-703d-4865-b7b1-241aa9c9c641.png)
+
+![Active (green) plugin icon indicator](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/97d25a35-9042-4995-b75b-b5c2edc64661.png)
+
+![Red plugin compilation error icon](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/aa3011fc-875f-40a9-b23b-ba48e3c25117.png)
 
 ---
 
@@ -71,6 +81,16 @@ A **red plugin icon** indicates a compilation error. Ways to track it down:
 - **Check version history:** compare the current note version against a past working version.
 - **Look for missing commas:** the single most common error is a missing comma between methods in the plugin's JavaScript object.
 
+![Red plugin compilation error indicator](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/5750d8a6-93e6-406c-81a1-6b74e93bd976.png)
+
+![Accessing DevTools via the browser View menu](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/16d5b882-d944-4fb2-87b8-f4a4a966839c.png)
+
+![DevTools Console error output](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/291e1f7c-9eb6-4fb6-9803-af3f71a4bb46.png)
+
+![Note version history access menu](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/cb2932c9-92c6-4f9c-8ebc-2bf5cb6bc3db.png)
+
+![Missing comma syntax error example](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/dae6b674-9143-4ea5-8a66-77048978c620.png)
+
 ---
 
 ## 🤓 Intermediate-to-Advanced Plugin Development
@@ -78,6 +98,10 @@ A **red plugin icon** indicates a compilation error. Ways to track it down:
 ### Getting started: the example repo
 
 For IDE-based development, use the **Amplenote Plugin Template repository**. It lets you create test files such as `plugin.test.js` that mock the `plugin` and `app` objects so you can exercise your code outside of Amplenote.
+
+![IDE syntax error highlighting](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/f7c28bee-2cbf-4a0d-bcd6-7c9d1d8363da.png)
+
+![Plugin test file example in an IDE](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/9556ee86-e888-43e9-bf57-0303bc86ed08.png)
 
 ### Running tests with breakpoints
 
@@ -99,6 +123,8 @@ The guide highlights several example plugins, each demonstrating key patterns:
 - **Thesaurus Plugin** — Renders 10 selections as radio inputs with a "show 10 more" option; makes simpler OpenAI calls than the AI plugin.
 - **Amplequery Plugin** — Queries all available notes; filters and displays results in tables; converts Markdown tables to JavaScript dictionaries.
 
+![Readwise plugin table results](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/14d3df44-5320-4592-865b-59a4d20c4794.png)
+
 ---
 
 ## 🤖 Let AI Write Your Plugin Code
@@ -114,6 +140,10 @@ Using **phind.com** with GPT-4 lets you reference Amplenote's plugin API documen
 
 - Identify the target **action** you need — typically `insertText`, `noteOption`, or `replaceText`.
 
+![Phind.com AI code generation interface](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/b5b81595-4d8d-4fc6-8fd3-09400161d585.png)
+
+![Phind-generated rhyming plugin output](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/9e5405e8-eb76-41dc-a085-6f15840bbe01.png)
+
 ### Example: building the Note2PDF plugin
 
 The guide describes building **Note2PDF** primarily through AI assistance. The workflow:
@@ -126,3 +156,17 @@ The guide describes building **Note2PDF** primarily through AI assistance. The w
 **Debugging approach:** the developer used the Chrome Web Inspector to identify library errors, added `console.log` statements to inspect returned objects, and verified each conversion step worked (markdown → HTML → PDF → download) before consulting the Plugin API documentation for the final download implementation.
 
 > Note: in the source page, the Note2PDF `console.log` debugging steps are shown via screenshots rather than reproduced as verbatim text, so the exact inspection code is not transcribed here.
+
+![Phind follow-up question interface](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/50a1c807-c14d-4f75-9389-37a1383ed9aa.png)
+
+![First version of Note2PDF plugin code generated by AI](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/fb4858b5-b953-4697-bbc6-9973f058b7fb.png)
+
+![Plugin code methods structure](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/2484108f-07cf-498c-a2f1-79bf94a83fe9.png)
+
+![Testing the plugin in Chrome Inspector](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/8341d764-8cc1-44f1-977a-619c5b3f81be.png)
+
+![JavaScript errors shown in Chrome Inspector](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/97033a72-fcf1-4136-ade2-966b318eac9a.png)
+
+![Viewing console.log output in the Console tab](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/869e1257-e2d0-4102-a420-156603be757c.png)
+
+![Viewing JavaScript variables revealed by console.log](https://images.amplenote.com/b456a2e4-d93b-11ed-b6ce-f2e3384d8128/3055bd72-c48a-4246-a65a-6768de65fc81.png)

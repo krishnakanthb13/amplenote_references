@@ -125,6 +125,10 @@ Describes a section of a note — a chunk of content delimited by headings (or h
 | `heading.text` | String | The heading's text content. |
 | `index` | Integer | Disambiguates sections with identical or `null` headings. |
 
+![Note structure with sections and headings](https://images.amplenote.com/fae505fa-bd40-11ed-8e3b-9a67e5fef0db/c553df7f-08ca-47f9-b2cd-dce6dc48668c.png)
+
+![Note sectioning with multiple headings and horizontal rules](https://images.amplenote.com/fae505fa-bd40-11ed-8e3b-9a67e5fef0db/c4d34ddd-25b8-4e40-9ac4-0a698742f8dd.png)
+
 ---
 
 ### tag

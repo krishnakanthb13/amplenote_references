@@ -15,6 +15,8 @@ registers the plugin. The note updates the plugin dynamically as it changes.
 
 ## Metadata Table Fields
 
+![Metadata table example](https://images.amplenote.com/2ae961e0-bc5d-11ed-808b-e21efa2d8566/c7582134-fdf7-431e-9f7d-85d8f73c01dd.png)
+
 | Field | Required | Description |
 |-------|----------|-------------|
 | `name` | Yes | The name the user will see when invoking the plugin. |

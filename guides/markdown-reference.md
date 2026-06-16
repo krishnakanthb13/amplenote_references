@@ -54,6 +54,10 @@ Colors are expressed on `==highlighted text==` elements, with an HTML-comment an
 
 The source page provides color-index charts for both **light mode** and **dark mode**, documenting **60 supported colors** for text and 60 for backgrounds, each mapped to an index number used in `cycleColor` / `backgroundCycleColor`. In the source, these name-to-index mappings are presented only as images, so the full numeric table is not transcribable here — refer to the [source page ↗](https://www.amplenote.com/help/plugin_api_markdown_reference_parse_markdown) for the exact index for each color.
 
+![Cycle color index chart — Light Mode](https://images.amplenote.com/e4672d3e-3bee-11ef-8e0e-26e37c279344/080289cc-ea91-40fb-8614-9ff11bab8aef.png)
+
+![Cycle color index chart — Dark Mode](https://images.amplenote.com/e4672d3e-3bee-11ef-8e0e-26e37c279344/c7d12f6f-f05a-4e04-b913-53f60ad7729b.png)
+
 ---
 
 ## Plain Highlights
@@ -96,6 +100,8 @@ Rich Footnotes use standard markdown footnote syntax. The footnote reference sit
 - `[label][^1]` places the footnote reference inline.
 - `[^1]: ...` defines the footnote body, which can include a link (`[text](url)`) and an image (`![](image-url)`).
 
+![Rich Footnote example](https://images.amplenote.com/c6cf84d6-ceb4-11ed-a7db-d2ab91c23399/53eb85c9-e7d3-4a7f-92e3-b68fa595113c.png)
+
 ---
 
 ## Inserting a Markdown Table
@@ -116,6 +122,10 @@ A fuller GFM table also includes the header separator row, e.g.:
 |--------|
 | Content<!-- {"cell":{"colwidth":350}} --> |
 ```
+
+![Markdown table example](https://images.amplenote.com/c6cf84d6-ceb4-11ed-a7db-d2ab91c23399/847c257f-1954-454f-8b78-41ce7e1b6927.png)
+
+![Markdown table cell output](https://images.amplenote.com/e4672d3e-3bee-11ef-8e0e-26e37c279344/8a14c4b1-3a0d-4860-96a7-c754b0b945a6.png)
 
 ---
 
@@ -174,6 +184,8 @@ And then text resumes
 ```
 
 Each `\` on its own line inserts an additional blank line of spacing.
+
+![Line breaks rendered output](https://images.amplenote.com/e4672d3e-3bee-11ef-8e0e-26e37c279344/c8cc9e43-88fa-43b4-a4a8-a3aa00e2422b.png)
 
 ---
 
