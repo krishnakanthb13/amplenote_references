@@ -14,10 +14,14 @@ Get the list of configured Task Domains for the user.
 None.
 
 ## Returns
-`Promise<taskDomain[]>` — array of task domain objects, each containing:
-- `name` (`string`) — display name
-- `notes` (`noteHandle[]`) — noteHandles in the Task Domain
-- `uuid` (`string`) — identifier
+`Promise<Array<Object>>` — array of task domain objects, each containing:
+- `name` (`String`) — display name
+- `notes` (`Array<`[`noteHandle`](../appendices/types.md#notehandle)`>`) — note handles in the Task Domain
+- `uuid` (`String`) — identifier
+
+## Types & references
+- [`noteHandle`](../appendices/types.md#notehandle) — shape of each entry in `notes`
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

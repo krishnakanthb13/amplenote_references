@@ -13,10 +13,14 @@ This function can return a large amount of data, so it's highly recommended to u
 `app.getTaskDomainTasks(taskDomainUUID: string) → Promise<task[]>` (supports async iteration)
 
 ## Parameters
-- `taskDomainUUID` (`string`) — task domain UUID
+- `taskDomainUUID` (`String`) — task domain `uuid`
 
 ## Returns
-`Promise<task[]>` — array of task objects in the task domain (iterable via `for await`).
+`Promise<Array<`[`task`](../appendices/types.md#task)`>>` — array of [`task`](../appendices/types.md#task) objects in the task domain. The return value is also an async iterable, so it can be consumed lazily via `for await` to limit memory/performance impact.
+
+## Types & references
+- [`task`](../appendices/types.md#task) — shape of each returned task
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

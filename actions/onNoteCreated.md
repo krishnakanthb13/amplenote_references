@@ -12,7 +12,7 @@ Called when a note has been created _on the current client_.
 
 ## Parameters
 - `app` — App Interface object. See [App Interface](../app-interface/index.md).
-- `noteHandle` (`noteHandle`) — Describes the newly created note.
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — Describes the newly created note. Exposes props such as `uuid`, `name`, `tags`, `created`, `updated`, `published`, `shared` and `vault`.
 
 ## Returns
 Nothing.
@@ -26,6 +26,11 @@ async onNoteCreated(app, noteHandle) {
   await app.alert("note created: " + JSON.stringify(noteHandle));
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — the object passed as `noteHandle`.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its optional `check`/`run` form.
 
 ## Related
 - [onNavigate](./onNavigate.md)

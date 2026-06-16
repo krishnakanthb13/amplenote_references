@@ -11,11 +11,11 @@ Find noteHandles for all notes matching a set of filter criteria. Tag filters su
 `app.filterNotes(filterParams?: object, sortOrder?: string) → Promise<noteHandle[]>`
 
 ## Parameters
-- `filterParams` (`object`, optional) — keys include `group`, `query`, `tag`, `taskDomainUUID`
-- `sortOrder` (`string`, optional) — one of `"changed"`, `"created"`, `"opened"`, `"relevance"`, `"title"`, `"updated"`
+- `filterParams` (`Object`, optional) — keys include `group` (`String`), `query` (`String`), `tag` (`String`, a [tag](../appendices/types.md#tag) filter; comma-separated for multiple, `^` prefix to negate), `taskDomainUUID` (`String`).
+- `sortOrder` (`String`, optional) — one of `"changed"`, `"created"`, `"opened"`, `"relevance"`, `"title"`, `"updated"`.
 
 ## Returns
-`Promise<noteHandle[]>` — array of matching noteHandles.
+`Promise<Array<`[noteHandle](../appendices/types.md#notehandle)`>>` — array of matching noteHandles.
 
 ## Example
 ```javascript
@@ -24,6 +24,11 @@ async insertText(app) {
   return `note count: ${noteHandles.length}`;
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — the returned array elements; each accepts a String uuid as shorthand.
+- [tag](../appendices/types.md#tag) — tag text format used in the `tag` filter.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.searchNotes`](./searchNotes.md)

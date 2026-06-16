@@ -12,7 +12,7 @@ Called when the user changes locations in the app, e.g. when opening a note, jot
 
 ## Parameters
 - `app` — App Interface object. See [App Interface](../app-interface/index.md).
-- `url` (`String`) — The URL being navigated to.
+- `url` (`String`) — The URL being navigated to (e.g. the location of the note or jots view just opened).
 
 ## Returns
 Nothing.
@@ -26,6 +26,11 @@ onNavigate(app, url) {
   console.log("new location: " + url);
 }
 ```
+
+## Types & references
+- `url` is a plain `String`; this action takes no API object types.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action.
 
 ## Related
 - [onNoteCreated](./onNoteCreated.md)

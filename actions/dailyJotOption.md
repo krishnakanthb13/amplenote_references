@@ -12,7 +12,7 @@ Adds an option to the suggestions shown below today's daily jot note in jots mod
 
 ## Parameters
 - `app` — App Interface object. See [App Interface](../app-interface/index.md).
-- `noteHandle` (`noteHandle`) — The note handle of the daily jot note.
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — The note handle of the daily jot note. Exposes props such as `uuid`, `name`, `tags`, `created`, `updated`, `published`, `shared` and `vault`.
 
 ## Returns
 Nothing.
@@ -31,6 +31,11 @@ dailyJotOption: {
   }
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — the object passed as `noteHandle`.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its `check`/`run` form.
 
 ## Related
 - [appOption](./appOption.md)

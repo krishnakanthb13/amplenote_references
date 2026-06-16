@@ -33,5 +33,10 @@ onPluginCall: {
 }
 ```
 
+## Types & references
+- `sourcePlugin` is a plain `Object` with `uuid` (`String`) and `source` (`String` or `null`); `...args` and the return value are any JSON-serializable values.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its `check`/`run` form.
+
 ## Related
 - [onEmbedCall](./onEmbedCall.md)

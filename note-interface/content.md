@@ -15,7 +15,7 @@ Get the content of the note, as markdown. See `app.getNoteContent` for more deta
 None.
 
 ## Returns
-`Promise<String>` — the note's content as markdown.
+`Promise<String>` — the note's content as a markdown String.
 
 ## Equivalent `app` method
 `app.getNoteContent(noteHandle)`
@@ -25,6 +25,11 @@ None.
 const markdown = await note.content();
 app.alert(markdown);
 ```
+
+## Types & references
+- Returns a markdown `String`.
+- [section](../appendices/types.md#section) — use [`note.sections`](./sections.md) to address content by heading-delimited section.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.replaceContent`](./replaceContent.md)

@@ -13,7 +13,7 @@ This file documents the plugin settings property `app.settings` and the method `
 **Type:** `object`
 
 ### Description
-An object containing the user-configured settings for the plugin. All values will be strings.
+A plain `Object` keyed by setting name (`String`), whose values are the user-configured settings for the plugin. All values are `String` (or `undefined` when a setting is unset).
 
 ### Example
 ```javascript
@@ -47,6 +47,10 @@ async appOption(app) {
   app.alert("new value: " + count);
 }
 ```
+
+## Types & references
+- `app.settings` is an `Object` keyed by setting name with `String` values
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.context`](./context.md)

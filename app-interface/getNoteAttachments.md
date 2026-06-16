@@ -11,10 +11,10 @@ Returns a list of attachments in the given note. Only attachments that are curre
 `app.getNoteAttachments(noteHandle: object) → Promise<attachment[] | null>`
 
 ## Parameters
-- `noteHandle` (`object`) — noteHandle identifying the note to list attachments for
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — noteHandle identifying the note to list attachments for (accepts a String `uuid` shorthand).
 
 ## Returns
-`Promise<attachment[] | null>` — array of attachment objects, or `null` if the note doesn't exist.
+`Promise<Array<`[attachment](../appendices/types.md#attachment)`> | null>` — array of attachment objects (each with `name`, `type` MIME string, and `uuid`), or `null` if the note doesn't exist.
 
 ## Example
 ```javascript
@@ -23,6 +23,11 @@ async noteOption(app, noteUUID) {
   await app.alert(`${attachments.length} attachments`);
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note; accepts a String uuid as shorthand.
+- [attachment](../appendices/types.md#attachment) — the returned array elements (`name`, `type`, `uuid`); pass an attachment `uuid` to [`app.getAttachmentURL`](./getAttachmentURL.md).
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.getAttachmentURL`](./getAttachmentURL.md)

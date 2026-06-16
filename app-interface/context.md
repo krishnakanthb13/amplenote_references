@@ -59,16 +59,16 @@ A string indicating which mode the app is currently in. Will be either `light` o
 ---
 
 ### `app.context.link`
-**Type:** `object` (conditional)
+**Type:** [`link`](../appendices/types.md#link) (conditional)
 
-Link object describing properties of the link the plugin action was invoked from. Will be `undefined` if the plugin action was not invoked from a context where the selection is in a link.
+A [`link`](../appendices/types.md#link) object describing properties of the link the plugin action was invoked from (`description` markdown `String | null`, `href` `String | null`). Will be `undefined` if the plugin action was not invoked from a context where the selection is in a link. Use `app.context.updateLink` to modify it.
 
 ---
 
 ### `app.context.selectionContent`
-**Type:** `string` (conditional)
+**Type:** `String` (conditional)
 
-When invoked from an editor context, the markdown representation of the content that is currently selected.
+When invoked from an editor context, the [markdown](../guides/markdown-reference.md) representation (`String`) of the content that is currently selected. Use `app.context.replaceSelection` to overwrite it.
 
 ---
 
@@ -96,7 +96,7 @@ Only present when a plugin has been installed from a public note. Call to check 
 ## Methods
 
 ### `app.context.replaceSelection`
-**Signature:** `replaceSelection(markdown: string) → Promise<boolean>`
+**Signature:** `replaceSelection(markdown: String) → Promise<Boolean>`
 
 Replaces the selection with markdown content. This function will not be present for plugin actions that are not invoked with a user selection/cursor placed in a note. Throws if the context in which the selection existed is no longer available.
 
@@ -116,9 +116,9 @@ async insertText(app) {
 ---
 
 ### `app.context.updateLink`
-**Signature:** `updateLink(updates: object) → Promise<void>`
+**Signature:** `updateLink(updates: Object) → Promise<void>`
 
-If the plugin action was invoked in a link, can be called to update link properties.
+If the plugin action was invoked in a link, can be called to update [`link`](../appendices/types.md#link) properties (`description`, `href`).
 
 ```javascript
 async replaceText(app) {
@@ -133,7 +133,7 @@ async replaceText(app) {
 ---
 
 ### `app.context.updateImage`
-**Signature:** `updateImage(updates: object) → Promise<void>`
+**Signature:** `updateImage(updates: Object) → Promise<void>`
 
 If the plugin action was invoked on an image (`imageOption` actions), can be called to update image properties.
 
@@ -162,6 +162,12 @@ async onEmbedCall(app, value) {
   await app.context.updateEmbedArgs((value || 0) + 1);
 }
 ```
+
+## Types & references
+- [`link`](../appendices/types.md#link) — shape of `app.context.link` (and `updates` for `updateLink`)
+- [Markdown reference](../guides/markdown-reference.md) — format of `selectionContent` and `replaceSelection` arguments
+- [Execution environment](../appendices/execution-environment.md) — embed contexts driving `renderEmbed`/`updateEmbedArgs`
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.settings` & `app.setSetting`](./settings.md)

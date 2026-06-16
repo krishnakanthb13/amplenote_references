@@ -13,10 +13,10 @@ Note on CORS: the web environment the plugin code executes in requires a server 
 `app.getAttachmentURL(attachmentUUID: string) → Promise<string>`
 
 ## Parameters
-- `attachmentUUID` (`string`) — attachment UUID identifying the attachment
+- `attachmentUUID` (`String`) — the `uuid` of an [attachment](../appendices/types.md#attachment) identifying the attachment (as returned by [`app.getNoteAttachments`](./getNoteAttachments.md)).
 
 ## Returns
-`Promise<string>` — a temporary URL to access the attachment content.
+`Promise<String>` — a temporary URL to access the attachment content.
 
 ## Example
 ```javascript
@@ -30,6 +30,10 @@ async noteOption(app, noteUUID) {
   }
 }
 ```
+
+## Types & references
+- [attachment](../appendices/types.md#attachment) — the `attachmentUUID` argument is an attachment's `uuid`.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.getNoteAttachments`](./getNoteAttachments.md)

@@ -11,10 +11,10 @@ Search note content. This matches the in-app "full search" functionality.
 `app.searchNotes(query: string) → Promise<noteHandle[]>`
 
 ## Parameters
-- `query` (`string`) — term to search for in note content
+- `query` (`String`) — term to search for in note content.
 
 ## Returns
-`Promise<noteHandle[]>` — array of matching noteHandles ordered by relevance.
+`Promise<Array<`[noteHandle](../appendices/types.md#notehandle)`>>` — array of matching noteHandles ordered by relevance.
 
 ## Example
 ```javascript
@@ -23,6 +23,10 @@ async insertText(app) {
   return `note count: ${noteHandles.length}`;
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — the returned array elements; each accepts a String uuid as shorthand.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.filterNotes`](./filterNotes.md)

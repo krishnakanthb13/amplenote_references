@@ -11,10 +11,14 @@ Adds a section to the sidebar (or drawer menu on the mobile app), allowing the u
 `app.openEmbed(...args) → Promise<void>`
 
 ## Parameters
-- `...args` — anything; passed to `renderEmbed` after the `app` argument
+- `...args` (any) — anything; passed to `renderEmbed` after the `app` argument
 
 ## Returns
 `Promise<void>`
+
+## Types & references
+- [Execution environment](../appendices/execution-environment.md) — how `renderEmbed` and embed code run
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

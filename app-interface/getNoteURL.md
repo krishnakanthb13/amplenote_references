@@ -11,10 +11,10 @@ Returns a full URL for the specified note. This URL can be used to link to the n
 `app.getNoteURL(noteHandle: object) → Promise<string>`
 
 ## Parameters
-- `noteHandle` (`object`) — object identifying the note
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — object identifying the note (accepts a String `uuid` shorthand).
 
 ## Returns
-`Promise<string>` — the URL of the note.
+`Promise<String>` — the URL of the note.
 
 ## Example
 ```javascript
@@ -23,6 +23,10 @@ async noteOption(app, noteUUID) {
   app.alert("note URL: " + noteURL);
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note; accepts a String uuid as shorthand.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.navigate`](./navigate.md)

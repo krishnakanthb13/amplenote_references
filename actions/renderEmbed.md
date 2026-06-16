@@ -50,5 +50,10 @@ Complete embed interaction example (embed that calls back into the host via `win
 }
 ```
 
+## Types & references
+- Returns a plain `String` of HTML; takes no API object types.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its optional `check`/`run` form.
+
 ## Related
 - [onEmbedCall](./onEmbedCall.md)

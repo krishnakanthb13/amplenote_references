@@ -12,7 +12,7 @@ Adds a button to the Rich Footnote popup, shown when the cursor is in a specific
 
 ## Parameters
 - `app` — App Interface object. See [App Interface](../app-interface/index.md).
-- `link` (`Object`) — Link object describing the link (e.g. its `description`).
+- `link` ([link](../appendices/types.md#link)) — The link the cursor is in. Exposes `href` and `description` (markdown Rich Footnote); either may be `null`.
 
 ## Returns
 Nothing.
@@ -27,6 +27,11 @@ linkOption(app, link) {
   app.context.updateLink({ description: newDescription });
 }
 ```
+
+## Types & references
+- [link](../appendices/types.md#link) — the object passed as `link`.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its optional `check`/`run` form.
 
 ## Related
 - [linkTarget](./linkTarget.md)

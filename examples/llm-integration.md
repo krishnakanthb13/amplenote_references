@@ -54,3 +54,12 @@ and body to match that provider's API (for example, Anthropic uses the
 
 > Note: the `makeRequest` snippet is adapted from the AmpleAI example on the source page;
 > the surrounding `messages` construction is abbreviated as `[...]` there.
+
+## Types & references
+
+- API keys are read from **`app.settings`** (one `setting` row per provider key), so each
+  user supplies their own credentials.
+- Plugin code runs in a **sandboxed browser iFrame/WebView** (see
+  [Execution environment](../appendices/execution-environment.md)). Direct calls to an
+  LLM provider's API may be **blocked by CORS** from this sandbox; when they are, route
+  the request through a proxy — see [CORS proxy](../appendices/cors-proxy.md).

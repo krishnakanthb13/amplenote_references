@@ -12,7 +12,7 @@ Get the title of the note. Returns the note's title as a `String`.
 `note.name`  (this is a property, not a method — access it directly without calling)
 
 ## Returns
-`String` — the title of the note.
+`String` — the title of the note. Corresponds to the `name` field of a [noteHandle](../appendices/types.md#notehandle); may be an empty string for an untitled note.
 
 ## Equivalent `app` method
 —
@@ -21,6 +21,10 @@ Get the title of the note. Returns the note's title as a `String`.
 ```javascript
 app.alert(`This note is named ${note.name}`);
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — the note's `name` field is the same title surfaced here.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.setName`](./setName.md)

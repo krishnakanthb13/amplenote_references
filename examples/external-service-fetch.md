@@ -4,6 +4,10 @@
 
 Plugins run client-side and can call external services using the standard `fetch()` API.
 
+Plugin code executes in a **sandboxed iFrame** (web/desktop) or **WebView** (mobile)
+with **no polyfills applied** — `fetch()` and other browser APIs are used as the host
+runtime provides them (see [Execution environment](../appendices/execution-environment.md)).
+
 ```javascript
 {
   async insertText(app) {
@@ -27,6 +31,9 @@ API.
 Plugin (browser)  ──▶  Cloudflare Worker (adds CORS headers)  ──▶  Target API
 ```
 
+For a step-by-step walkthrough of standing up such a proxy, see
+[CORS proxy](../appendices/cors-proxy.md).
+
 ## Reporting Progress on Long-Running Operations
 
 For operations that take a while, use `app.openEmbed()` to write your progress to an
@@ -42,3 +49,12 @@ visible feedback while the plugin works, instead of leaving the UI appearing fro
   }
 }
 ```
+
+## Types & references
+
+- [Execution environment](../appendices/execution-environment.md) — the sandboxed
+  iFrame/WebView in which `fetch()` runs (no polyfills applied).
+- [CORS proxy](../appendices/cors-proxy.md) — proxying requests to APIs that do not
+  return permissive CORS headers.
+- [External library loading](../appendices/external-libraries.md) — loading SDKs or other
+  third-party libraries from a CDN when an API ships a client library.

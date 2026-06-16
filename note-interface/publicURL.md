@@ -15,7 +15,7 @@ Get a link to the published version of a note, if the note is published.
 None.
 
 ## Returns
-`Promise<String | null>` — the public URL of the note, or `null` if the note is not published.
+`Promise<String | null>` — the public URL `String` of the note, or `null` if the note is not published.
 
 ## Equivalent `app` method
 —
@@ -29,6 +29,10 @@ if (url) {
   app.alert("This note is not published.");
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — a published note's handle reports `published: true`.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.publish`](./publish.md)

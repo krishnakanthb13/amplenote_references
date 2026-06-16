@@ -11,11 +11,17 @@ Update a single mood rating's properties.
 `app.updateMoodRating(moodRatingUUID: string, updates: object) → Promise<void>`
 
 ## Parameters
-- `moodRatingUUID` (`string`) — identifies the mood rating
-- `updates` (`object`) — allowed properties: `note`, `rating`
+- `moodRatingUUID` (`String`) — `uuid` identifying the mood rating
+- `updates` (`Object`) — writable [`moodRating`](../appendices/types.md#moodrating) fields:
+  - `note` (`String`) — free-text note associated with the rating
+  - `rating` (`Integer`) — an integer in the range -2 to +2 (inclusive)
 
 ## Returns
 `Promise<void>`
+
+## Types & references
+- [`moodRating`](../appendices/types.md#moodrating) — writable fields accepted in `updates`
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

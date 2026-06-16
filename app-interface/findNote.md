@@ -11,13 +11,13 @@ Returns a noteHandle identifying a note, with additional note metadata attribute
 `app.findNote(noteHandle: object) → Promise<noteHandle | null>`
 
 ## Parameters
-- `noteHandle` (`object`) — identifying object with properties:
-  - `uuid` (`string`) — UUID (if provided, other attributes are ignored)
-  - `name` (`string`) — note name (required if `uuid` not provided)
-  - `tags` (`string[]`, optional) — array of tag filter strings
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — identifying object (or a String `uuid` shorthand) with properties:
+  - `uuid` (`String`) — UUID (if provided, other attributes are ignored).
+  - `name` (`String`) — note name (required if `uuid` not provided).
+  - `tags` (`Array<String>`, optional) — array of [tag](../appendices/types.md#tag) filter strings.
 
 ## Returns
-`Promise<noteHandle | null>` — a note handle with metadata attributes populated, or `null` if the note is not found.
+`Promise<`[noteHandle](../appendices/types.md#notehandle)`| null>` — a noteHandle with metadata attributes populated (`changed`, `created`, `name`, `tags`, `updated`, `uuid`, `vault`, plus `published`/`shared` only when true), or `null` if the note is not found.
 
 ## Example
 ```javascript
@@ -26,6 +26,11 @@ async noteOption(app, noteUUID) {
   app.alert(noteHandle.name);
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — both the argument and the return value; accepts a String uuid as shorthand. A `local-` prefixed uuid is unsynced.
+- [tag](../appendices/types.md#tag) — tag text format used in the `tags` filter.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.createNote`](./createNote.md)

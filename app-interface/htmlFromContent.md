@@ -11,10 +11,15 @@ Converts markdown-formatted content to an HTML string, rendered with the same ma
 `app.htmlFromContent(content: string) → Promise<string>`
 
 ## Parameters
-- `content` (`string`) — markdown-formatted content to convert
+- `content` (`String`) — [markdown](../guides/markdown-reference.md)-formatted content to convert
 
 ## Returns
-`Promise<string>` — a string of HTML rendering the given content, wrapped in a readonly `ample-editor` container element.
+`Promise<String>` — a `String` of HTML rendering the given content, wrapped in a readonly `ample-editor` container element.
+
+## Types & references
+- [Markdown reference](../guides/markdown-reference.md) — formatting accepted in `content`
+- [Markdown content appendix](../appendices/markdown-content.md) — how note content is represented as markdown
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

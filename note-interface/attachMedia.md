@@ -12,10 +12,10 @@ Attach a media file (image or video) to the note. See `app.attachNoteMedia` for 
 `note.attachMedia(dataURL)`
 
 ## Parameters
-- `dataURL` (`String`) — a data URL containing the encoded image or video to attach.
+- `dataURL` (`String`) — a data URL (e.g. `data:image/png;base64,...`) containing the encoded image or video to attach.
 
 ## Returns
-`Promise<String>` — the URL of the attached media (image URL).
+`Promise<String>` — the URL `String` of the attached media. Use this as the `src` of an [image](../appendices/types.md#image) when embedding it in content.
 
 ## Equivalent `app` method
 `app.attachNoteMedia(noteHandle, dataURL)`
@@ -24,6 +24,10 @@ Attach a media file (image or video) to the note. See `app.attachNoteMedia` for 
 ```javascript
 const imageURL = await note.attachMedia("data:image/png;base64,iVBORw0KGgo...");
 ```
+
+## Types & references
+- [image](../appendices/types.md#image) — the returned media URL becomes an image's `src`.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.attachments`](./attachments.md)

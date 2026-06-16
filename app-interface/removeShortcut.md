@@ -11,11 +11,14 @@ Removes a shortcut from one of the shortcut areas. The shortcut to remove is mat
 `app.removeShortcut(area: string, shortcut: object) → Promise<boolean>`
 
 ## Parameters
-- `area` (`string`) — one of `"calendar"`, `"jots"`, `"notes"`, or `"tasks"`
-- `shortcut` (`object`) — object containing the filter properties to match
+- `area` (`String`) — one of `"calendar"`, `"jots"`, `"notes"`, or `"tasks"`
+- `shortcut` (`Object`) — object containing the filter properties (`group`, `query`, `references`, `remoteUUID`, `tag`) to match
 
 ## Returns
-`Promise<boolean>` — resolves to `true` (removal is a no-op if not found).
+`Promise<Boolean>` — resolves to `true` (removal is a no-op if not found).
+
+## Types & references
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

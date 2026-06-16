@@ -25,6 +25,10 @@ None.
 await note.delete();
 ```
 
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note being deleted.
+- [Note Interface index](./index.md)
+
 ## Related
 - [`note.setName`](./setName.md)
 - [`note.url`](./url.md)

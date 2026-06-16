@@ -40,5 +40,10 @@ replaceText: {
 }
 ```
 
+## Types & references
+- `text` and the return value are plain `String`s (return `null` to cancel); takes no API object types.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its `check`/`run` form for a custom label.
+
 ## Related
 - [insertText](./insertText.md)

@@ -12,10 +12,10 @@ Get the content of backlinks from a specific source note to the note. Returns th
 `note.backlinkContents(sourceNoteHandle)`
 
 ## Parameters
-- `sourceNoteHandle` (`noteHandle`) — the origin note reference whose backlinking content should be retrieved.
+- `sourceNoteHandle` ([noteHandle](../appendices/types.md#notehandle)) — the origin note reference whose backlinking content should be retrieved. A bare `uuid` String is accepted as shorthand.
 
 ## Returns
-`Promise<Array>` — an array of content fragments from the source note that reference this note.
+`Promise<Array<String>>` — an array of markdown content fragments from the source note that reference this note.
 
 ## Equivalent `app` method
 —
@@ -27,6 +27,10 @@ for await (const sourceHandle of note.backlinks()) {
   app.alert(fragments.join("\n"));
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — the type of the `sourceNoteHandle` argument (accepts a `uuid` String shorthand).
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.backlinks`](./backlinks.md)

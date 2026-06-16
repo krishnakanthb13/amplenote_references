@@ -11,13 +11,17 @@ Gets tasks completed in the given time range, which includes standard completed,
 `app.getCompletedTasks(fromTimestamp: number, toTimestamp: number, options?: object) → Promise<task[]>`
 
 ## Parameters
-- `fromTimestamp` (`number`) — integer unix timestamp; only tasks completed on or after this time
-- `toTimestamp` (`number`) — integer unix timestamp; only tasks completed before this time (non-inclusive)
-- `options` (`object`, optional) — keys include:
-  - `taskDomainUUID` (`string`) — UUID of a task domain (filters to that domain only)
+- `fromTimestamp` (`Integer`) — Unix timestamp (UTC seconds); only tasks completed on or after this time
+- `toTimestamp` (`Integer`) — Unix timestamp (UTC seconds); only tasks completed before this time (non-inclusive)
+- `options` (`Object`, optional) — keys include:
+  - `taskDomainUUID` (`String`) — `uuid` of a task domain (filters to that domain only)
 
 ## Returns
-`Promise<task[]>` — array of task objects describing completed tasks.
+`Promise<Array<`[`task`](../appendices/types.md#task)`>>` — array of [`task`](../appendices/types.md#task) objects describing completed, dismissed, and crossed-out tasks.
+
+## Types & references
+- [`task`](../appendices/types.md#task) — shape of each returned task
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

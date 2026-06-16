@@ -15,11 +15,14 @@ Allowed MIME types:
 `app.writeClipboardData(data: string, mimeType?: string) → Promise<void>`
 
 ## Parameters
-- `data` (`string`) — data to copy to the clipboard (base64 encoded for non-text types)
-- `mimeType` (`string`, optional) — mime type; defaults to `"text/plain"`
+- `data` (`String`) — data to copy to the clipboard (base64 encoded for non-text types)
+- `mimeType` (`String`, optional) — mime type; defaults to `"text/plain"`
 
 ## Returns
 `Promise<void>`
+
+## Types & references
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

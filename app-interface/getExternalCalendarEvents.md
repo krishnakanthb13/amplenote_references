@@ -11,12 +11,16 @@ Get events from the user's connected external calendars (e.g. Google Calendar, A
 `app.getExternalCalendarEvents(options?: object) → Promise<Array>`
 
 ## Parameters
-- `options` (`object`, optional):
-  - `days` (`number`) — integer (1-30) days of events to return
-  - `taskDomainUUID` (`string`) — UUID to filter results by task domain
+- `options` (`Object`, optional):
+  - `days` (`Integer`) — number of days of events to return (1-30)
+  - `taskDomainUUID` (`String`) — `uuid` to filter results by task domain
 
 ## Returns
-`Promise<Array>` — array of externalCalendarEvent objects.
+`Promise<Array<`[`externalCalendarEvent`](../appendices/types.md#externalcalendarevent)`>>` — array of [`externalCalendarEvent`](../appendices/types.md#externalcalendarevent) objects (from cached events for roughly the next 30 days).
+
+## Types & references
+- [`externalCalendarEvent`](../appendices/types.md#externalcalendarevent) — shape of each returned event
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

@@ -11,12 +11,17 @@ Returns the tasks that are present in the specified note.
 `app.getNoteTasks(noteHandle: object, options?: object) → Promise<task[]>`
 
 ## Parameters
-- `noteHandle` (`object`) — object identifying the note to get tasks from
-- `options` (`object`, optional) — keys include:
-  - `includeDone` (`boolean`) — whether completed and dismissed tasks should be returned (defaults to `false`)
+- `noteHandle` ([`noteHandle`](../appendices/types.md#notehandle)) — object identifying the note to get tasks from (e.g. `{ uuid }`)
+- `options` (`Object`, optional) — keys include:
+  - `includeDone` (`Boolean`) — whether completed and dismissed tasks should be returned (defaults to `false`)
 
 ## Returns
-`Promise<task[]>` — array of task objects.
+`Promise<Array<`[`task`](../appendices/types.md#task)`>>` — array of [`task`](../appendices/types.md#task) objects present in the note.
+
+## Types & references
+- [`task`](../appendices/types.md#task) — shape of each returned task
+- [`noteHandle`](../appendices/types.md#notehandle) — note identifier accepted as the first argument
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

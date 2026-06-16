@@ -11,11 +11,14 @@ Adds a shortcut to one of the shortcut areas shown in the sidebar (the lists of 
 `app.addShortcut(area: string, shortcut: object) → Promise<boolean>`
 
 ## Parameters
-- `area` (`string`) — one of `"calendar"`, `"jots"`, `"notes"`, or `"tasks"`
-- `shortcut` (`object`) — object with at least one of `group`, `query`, `references`, `remoteUUID`, `tag` (all strings); optional `name` (string), `isDefault` (boolean)
+- `area` (`String`) — one of `"calendar"`, `"jots"`, `"notes"`, or `"tasks"`
+- `shortcut` (`Object`) — object with at least one of `group`, `query`, `references`, `remoteUUID`, `tag` (all `String`); optional `name` (`String`), `isDefault` (`Boolean`)
 
 ## Returns
-`Promise<boolean>` — resolves to `true` once the shortcut is added.
+`Promise<Boolean>` — resolves to `true` once the shortcut is added.
+
+## Types & references
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

@@ -25,6 +25,10 @@ Inserts content at the beginning of a note. If the note does not yet exist, call
 await note.insertContent("# Heading\n\nSome new content at the top.");
 ```
 
+## Types & references
+- Accepts a markdown `String`.
+- [Note Interface index](./index.md)
+
 ## Related
 - [`note.replaceContent`](./replaceContent.md)
 - [`note.content`](./content.md)

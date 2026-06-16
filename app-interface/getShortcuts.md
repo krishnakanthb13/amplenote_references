@@ -11,10 +11,13 @@ Lists the shortcuts in one of the shortcut areas, including any default shortcut
 `app.getShortcuts(area: string) → Promise<Array>`
 
 ## Parameters
-- `area` (`string`) — one of `"calendar"`, `"jots"`, `"notes"`, or `"tasks"`
+- `area` (`String`) — one of `"calendar"`, `"jots"`, `"notes"`, or `"tasks"`
 
 ## Returns
-`Promise<Array>` — array of shortcut objects containing properties `group`, `query`, `references`, `remoteUUID`, `tag`, `name`.
+`Promise<Array<Object>>` — array of shortcut objects, each containing `group`, `query`, `references`, `remoteUUID`, `tag`, `name` (all `String`).
+
+## Types & references
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

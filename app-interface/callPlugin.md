@@ -11,13 +11,17 @@ Make a call to another installed plugin's `onPluginCall` function.
 `app.callPlugin(targetPlugin: object, ...args) → Promise<any>`
 
 ## Parameters
-- `targetPlugin` (`object`) — object with optional keys:
-  - `source` (`string`) — public note token of a published plugin
-  - `uuid` (`string`) — note UUID of a plugin in the user's account
-- `...args` — additional arguments passed to the target plugin's `onPluginCall`
+- `targetPlugin` (`Object`) — object with optional keys (provide one):
+  - `source` (`String`) — public note token of a published plugin
+  - `uuid` (`String`) — note `uuid` of a plugin in the user's account
+- `...args` (any) — additional arguments passed to the target plugin's `onPluginCall`
 
 ## Returns
 `Promise<any>` — whatever the target plugin returns, or `undefined` if unhandled.
+
+## Types & references
+- [Execution environment](../appendices/execution-environment.md) — how plugin code (including `onPluginCall`) runs
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

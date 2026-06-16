@@ -11,11 +11,11 @@ Upload a media file, associating it with the specified note. This function uploa
 `app.attachNoteMedia(noteHandle: object, dataURL: string) → Promise<string>`
 
 ## Parameters
-- `noteHandle` (`object`) — noteHandle describing the note to attach media to
-- `dataURL` (`string`) — data URL describing the media file data
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — noteHandle describing the note to attach media to (accepts a String `uuid` shorthand).
+- `dataURL` (`String`) — data URL describing the media file data.
 
 ## Returns
-`Promise<string>` — the URL of the uploaded media.
+`Promise<String>` — the URL of the uploaded image/media, suitable for embedding in note markdown (e.g. `![](url)`).
 
 ## Example
 ```javascript
@@ -29,6 +29,12 @@ async insertText(app) {
   return null;
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the target note; accepts a String uuid as shorthand.
+- [attachment](../appendices/types.md#attachment) — the resulting note attachment, listable via [`app.getNoteAttachments`](./getNoteAttachments.md).
+- [image](../appendices/types.md#image) — when the media is an image, it becomes a note inline image.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.getNoteAttachments`](./getNoteAttachments.md)

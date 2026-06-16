@@ -15,7 +15,7 @@ Gets the sections in the note. See `app.getNoteSections` for more details.
 None.
 
 ## Returns
-`Promise<section[]>` — an array of section objects describing the note's heading-delimited sections.
+`Promise<Array<section>>` — an array of [section](../appendices/types.md#section) objects describing the note's heading-delimited sections. Each section carries a `heading` (`{ anchor, href, level, text }` or `null`) and an `index` that disambiguates sections with identical or `null` headings.
 
 ## Equivalent `app` method
 `app.getNoteSections(noteHandle)`
@@ -25,6 +25,10 @@ None.
 const sections = await note.sections();
 app.alert(`Note has ${sections.length} sections.`);
 ```
+
+## Types & references
+- [section](../appendices/types.md#section) — the element type of the returned array.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.content`](./content.md)

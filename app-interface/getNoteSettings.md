@@ -11,10 +11,10 @@ Gets settings specific to a note that are not included in noteHandle metadata, g
 `app.getNoteSettings(noteHandle: object) → Promise<object | null>`
 
 ## Parameters
-- `noteHandle` (`object`) — object identifying the note
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — object identifying the note (accepts a String `uuid` shorthand).
 
 ## Returns
-`Promise<object | null>` — object with possible keys `backgroundColor`, `bannerImageURL`, `maxOpenTasks`, or `null`.
+`Promise<Object | null>` — object with possible keys `backgroundColor` (`String`), `bannerImageURL` (`String`), `maxOpenTasks` (`Number`), or `null`.
 
 ## Example
 ```javascript
@@ -23,6 +23,10 @@ async noteOption(app, noteUUID) {
   await app.alert("Settings: " + JSON.stringify(settings));
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note; accepts a String uuid as shorthand.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.setNoteSetting`](./setNoteSetting.md)

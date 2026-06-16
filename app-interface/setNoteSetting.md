@@ -11,12 +11,12 @@ Set the value of a note setting. The value will be synchronized to all of the us
 `app.setNoteSetting(noteHandle: object, key: string, value: any) → Promise<boolean>`
 
 ## Parameters
-- `noteHandle` (`object`) — object identifying the note
-- `key` (`string`) — the setting key (`"backgroundColor"` or `"maxOpenTasks"`)
-- `value` (`any`) — the value to set
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — object identifying the note (accepts a String `uuid` shorthand).
+- `key` (`String`) — the setting key (`"backgroundColor"` or `"maxOpenTasks"`).
+- `value` (`String` | `Number`) — the value to set (a hex color String for `"backgroundColor"`, an integer Number for `"maxOpenTasks"`).
 
 ## Returns
-`Promise<boolean>` — whether the setting was updated.
+`Promise<Boolean>` — whether the setting was updated.
 
 ## Example
 ```javascript
@@ -24,6 +24,10 @@ async noteOption(app, noteUUID) {
   await app.setNoteSetting({ uuid: noteUUID }, "backgroundColor", "#ff0000");
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note; accepts a String uuid as shorthand.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.getNoteSettings`](./getNoteSettings.md)

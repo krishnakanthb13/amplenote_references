@@ -39,5 +39,10 @@ insertText: {
 }
 ```
 
+## Types & references
+- Returns a plain `String`; takes no API object types beyond the [App Interface](../app-interface/index.md) `app`.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its `check`/`run` form for a custom keyword.
+
 ## Related
 - [replaceText](./replaceText.md)

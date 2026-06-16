@@ -20,10 +20,13 @@ URL examples:
 `app.navigate(url: string) → Promise<boolean>`
 
 ## Parameters
-- `url` (`string`) — the Amplenote app URL to navigate to
+- `url` (`String`) — the Amplenote app URL to navigate to (must start with `https://www.amplenote.com/notes`)
 
 ## Returns
-`Promise<boolean>` — `true` if a valid URL was navigated to, `false` otherwise.
+`Promise<Boolean>` — `true` if a valid URL was navigated to, `false` otherwise.
+
+## Types & references
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

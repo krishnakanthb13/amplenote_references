@@ -12,10 +12,10 @@ Remove a tag from the note. See `app.removeNoteTag` for details.
 `note.removeTag(tagName)`
 
 ## Parameters
-- `tagName` (`String`) — the name of the tag to remove from the note.
+- `tagName` (`String`) — the tag text to remove from the note. This is the `text` of a [tag](../appendices/types.md#tag): lowercase letters, dashes, and the `/` parent-child delimiter (e.g. `"project/active"`).
 
 ## Returns
-`Promise<boolean>` — resolves to whether the tag was successfully removed.
+`Promise<Boolean>` — resolves to whether the tag was successfully removed.
 
 ## Equivalent `app` method
 `app.removeNoteTag({ uuid }, tagName)`
@@ -24,6 +24,10 @@ Remove a tag from the note. See `app.removeNoteTag` for details.
 ```javascript
 const success = await note.removeTag("project/active");
 ```
+
+## Types & references
+- [tag](../appendices/types.md#tag) — the tag type; this method accepts a tag `text` String.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.addTag`](./addTag.md)

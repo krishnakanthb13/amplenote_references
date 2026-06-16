@@ -26,6 +26,11 @@ appOption(app) {
 }
 ```
 
+## Types & references
+- Takes no API object types — only the [App Interface](../app-interface/index.md) `app`.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its optional `check`/`run` form.
+
 ## Related
 - [noteOption](./noteOption.md)
 - [dailyJotOption](./dailyJotOption.md)

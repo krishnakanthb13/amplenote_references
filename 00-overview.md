@@ -26,15 +26,24 @@ Plugin development is organized into five core reference areas:
 
 ## Supporting Reference Materials (Appendices)
 
-Four appendices provide the lower-level technical details:
+These appendices provide the lower-level technical details:
 
-- **Types** — the type definitions used throughout the API.
-- **Plugin code execution environment** — specifications for the sandbox/environment in
-  which plugin code runs.
-- **Markdown content handling** — how Amplenote represents and processes markdown
-  content exchanged with plugins.
-- **External library loading** — procedures for loading third-party libraries from
-  within a plugin.
+- **[Types](./appendices/types.md)** — the type definitions used throughout the API.
+- **[Plugin code execution environment](./appendices/execution-environment.md)** —
+  specifications for the sandbox/environment in which plugin code runs.
+- **[Markdown content handling](./appendices/markdown-content.md)** — how Amplenote
+  represents and processes markdown content exchanged with plugins.
+- **[External library loading](./appendices/external-libraries.md)** — procedures for
+  loading third-party libraries from within a plugin.
+- **[CORS proxy](./appendices/cors-proxy.md)** — setting up a proxy so plugins can reach
+  external APIs that do not return permissive CORS headers.
+
+### Guides
+
+- **[Getting started](./guides/getting-started.md)** — a guide to writing your first
+  plugin.
+- **[Markdown reference](./guides/markdown-reference.md)** — the markdown formatting
+  conventions used by Amplenote.
 
 ## Categories of Actions
 
@@ -83,3 +92,10 @@ plugins listed in the [Examples](./examples/index.md).
 - [App Interface](./app-interface/index.md)
 - [Note Interface](./note-interface/index.md)
 - [Examples](./examples/index.md)
+- Appendices: [Types](./appendices/types.md) ·
+  [Execution environment](./appendices/execution-environment.md) ·
+  [Markdown content](./appendices/markdown-content.md) ·
+  [External libraries](./appendices/external-libraries.md) ·
+  [CORS proxy](./appendices/cors-proxy.md)
+- Guides: [Getting started](./guides/getting-started.md) ·
+  [Markdown reference](./guides/markdown-reference.md)

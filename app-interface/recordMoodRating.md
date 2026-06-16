@@ -11,10 +11,14 @@ Records a mood rating.
 `app.recordMoodRating(rating: number) → Promise<string>`
 
 ## Parameters
-- `rating` (`number`) — integer in the range -2 to +2 (inclusive)
+- `rating` (`Integer`) — the [`moodRating`](../appendices/types.md#moodrating) `rating` value, an integer in the range -2 to +2 (inclusive)
 
 ## Returns
-`Promise<string>` — the UUID of the recorded mood rating.
+`Promise<String>` — the `uuid` of the recorded [`moodRating`](../appendices/types.md#moodrating).
+
+## Types & references
+- [`moodRating`](../appendices/types.md#moodrating) — shape of a recorded mood rating
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

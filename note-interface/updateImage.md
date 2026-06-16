@@ -12,8 +12,8 @@ Update a specific image in the note (for example to change its caption or other 
 `note.updateImage(image, options)`
 
 ## Parameters
-- `image` (`image`) — the image object to update (typically one obtained from `note.images()`).
-- `options` (`object`) — the properties to change on the image (for example a new caption).
+- `image` ([image](../appendices/types.md#image)) — the image object to update, typically one obtained from [`note.images`](./images.md). It is identified by its `src` together with its read-only `index`.
+- `options` (`Object`) — an updates object specifying the writable [image](../appendices/types.md#image) properties to change, such as `caption` (markdown String), `text` (OCR String), or `width` (Integer pixels).
 
 ## Returns
 `Promise<void>`
@@ -26,6 +26,10 @@ Update a specific image in the note (for example to change its caption or other 
 const images = await note.images();
 await note.updateImage(images[0], { caption: "Updated caption" });
 ```
+
+## Types & references
+- [image](../appendices/types.md#image) — both the image argument and the shape of the updates object.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.images`](./images.md)

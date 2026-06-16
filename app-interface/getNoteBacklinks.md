@@ -11,10 +11,10 @@ Returns the list of notes that link to the specified note.
 `app.getNoteBacklinks(noteHandle: object) → Promise<noteHandle[]>`
 
 ## Parameters
-- `noteHandle` (`object`) — object identifying the note being linked to
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — object identifying the note being linked to (accepts a String `uuid` shorthand).
 
 ## Returns
-`Promise<noteHandle[]>` — array of notes that link to the specified note.
+`Promise<Array<`[noteHandle](../appendices/types.md#notehandle)`>>` — noteHandles for the notes that link to the specified note. Also usable as an async iterable.
 
 ## Example
 ```javascript
@@ -29,6 +29,10 @@ async noteOption(app, noteUUID) {
   await app.alert("count: " + count);
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — both the argument and the returned elements; accepts a String uuid as shorthand.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.getNoteBacklinkContents`](./getNoteBacklinkContents.md)

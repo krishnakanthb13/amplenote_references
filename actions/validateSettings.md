@@ -27,5 +27,10 @@ validateSettings(app, settings) {
 }
 ```
 
+## Types & references
+- `settings` is a plain `Object`; the return value is an `Array` of error `String`s (or a falsy value when valid).
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — defining plugin settings.
+
 ## Related
 - [onPluginCall](./onPluginCall.md)

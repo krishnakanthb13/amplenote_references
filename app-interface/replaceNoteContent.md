@@ -11,12 +11,12 @@ Replace the entire content of a note with new content, or replace the content of
 `app.replaceNoteContent(noteHandle: object, content: string, options?: object) → Promise<boolean>`
 
 ## Parameters
-- `noteHandle` (`object`) — object identifying the note
-- `content` (`string`) — markdown content
-- `options` (`object`, optional) — keys include `section`, `includeCompletedTasks`, `includeHiddenTasks`
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — object identifying the note (accepts a String `uuid` shorthand).
+- `content` (`String`) — markdown content. See the [Markdown content appendix](../appendices/markdown-content.md) and [Markdown reference guide](../guides/markdown-reference.md).
+- `options` (`Object`, optional) — keys include `section` (a [section](../appendices/types.md#section) or its `heading` to scope the replacement to a single section), `includeCompletedTasks`, `includeHiddenTasks`.
 
 ## Returns
-`Promise<boolean>` — whether the replacement was performed.
+`Promise<Boolean>` — whether the replacement was performed.
 
 ## Example
 ```javascript
@@ -25,6 +25,13 @@ async noteOption(app, noteUUID) {
   await app.replaceNoteContent({ uuid: noteUUID }, newContent);
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note; accepts a String uuid as shorthand.
+- [section](../appendices/types.md#section) — the `options.section` target for a scoped replacement.
+- [Markdown content appendix](../appendices/markdown-content.md) — structure of the `content` markdown.
+- [Markdown reference guide](../guides/markdown-reference.md) — supported markdown syntax.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.insertNoteContent`](./insertNoteContent.md)

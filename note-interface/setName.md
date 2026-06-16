@@ -12,7 +12,7 @@ Sets a new name (title) for the note.
 `note.setName(newName)`
 
 ## Parameters
-- `newName` (`String`) — the new title to assign to the note.
+- `newName` (`String`) — the new title to assign to the note. Becomes the note's `name` (see [noteHandle](../appendices/types.md#notehandle)).
 
 ## Returns
 `Promise<void>`
@@ -24,6 +24,10 @@ Sets a new name (title) for the note.
 ```javascript
 await note.setName("My renamed note");
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — the `name` field this method updates.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.name`](./name.md)

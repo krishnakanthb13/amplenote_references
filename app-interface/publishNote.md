@@ -11,10 +11,10 @@ Publish a note to a public URL. Note publishing requires an Unlimited or Founder
 `app.publishNote(noteHandle: object) → Promise<string | null>`
 
 ## Parameters
-- `noteHandle` (`object`) — noteHandle describing the note to publish (must be remotely-persisted)
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — noteHandle describing the note to publish; must be remotely-persisted (a non-`local-` prefixed `uuid`). Accepts a String `uuid` shorthand.
 
 ## Returns
-`Promise<string | null>` — the URL of the published note, or `null` if publication failed.
+`Promise<String | null>` — the URL of the published note, or `null` if publication failed.
 
 ## Example
 ```javascript
@@ -23,6 +23,10 @@ async noteOption(app, noteUUID) {
   await app.alert("Public URL: " + url);
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note (must be remotely-persisted; a `local-` prefixed uuid is unsynced). Accepts a String uuid as shorthand. When a note is published, its noteHandle gains a `published` property.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.unpublishNote`](./unpublishNote.md)

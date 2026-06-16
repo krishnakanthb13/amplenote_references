@@ -11,10 +11,14 @@ Evaluates a string expression, using the same logic used to evaluate in-editor `
 `app.evaluateExpression(string: string) → Promise<string | number | null>`
 
 ## Parameters
-- `string` (`string`) — the expression to evaluate
+- `string` (`String`) — the expression to evaluate, using the same [markdown](../guides/markdown-reference.md) `{expression}` syntax supported in the editor
 
 ## Returns
-`Promise<string | number | null>` — the string or number result of the expression, or `null` if invalid.
+`Promise<String | Number | null>` — the `String` or `Number` result of the expression, or `null` if invalid.
+
+## Types & references
+- [Markdown reference](../guides/markdown-reference.md) — in-editor `{expression}` syntax
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

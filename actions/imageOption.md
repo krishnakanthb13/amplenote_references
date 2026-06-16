@@ -12,7 +12,7 @@ Adds an option to the drop-down menu on each image in a note.
 
 ## Parameters
 - `app` — App Interface object. See [App Interface](../app-interface/index.md).
-- `image` (`Object`) — Image object describing the selected image (e.g. its `src`).
+- `image` ([image](../appendices/types.md#image)) — The selected image. Exposes `src`, `caption`, `text` (OCR), `index` (read-only) and an optional `width`.
 
 ## Returns
 Nothing.
@@ -26,6 +26,11 @@ async imageOption(app, image) {
   await app.alert("image: " + image.src);
 }
 ```
+
+## Types & references
+- [image](../appendices/types.md#image) — the object passed as `image`.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its optional `check`/`run` form.
 
 ## Related
 - [noteOption](./noteOption.md)

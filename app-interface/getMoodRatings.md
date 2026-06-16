@@ -11,11 +11,15 @@ Returns an array of mood rating objects filtered by timestamp range.
 `app.getMoodRatings(from: number, to?: number) → Promise<Array>`
 
 ## Parameters
-- `from` (`number`) — integer unix timestamp (seconds); ratings on or after this time
-- `to` (`number`, optional) — integer unix timestamp (seconds); ratings before this time
+- `from` (`Integer`) — Unix timestamp (UTC seconds); ratings on or after this time
+- `to` (`Integer`, optional) — Unix timestamp (UTC seconds); ratings before this time
 
 ## Returns
-`Promise<Array>` — array of moodRating objects.
+`Promise<Array<`[`moodRating`](../appendices/types.md#moodrating)`>>` — array of [`moodRating`](../appendices/types.md#moodrating) objects.
+
+## Types & references
+- [`moodRating`](../appendices/types.md#moodrating) — shape of each returned rating
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

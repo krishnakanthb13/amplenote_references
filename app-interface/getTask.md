@@ -11,10 +11,14 @@ Get the details of a single task.
 `app.getTask(taskUUID: string) → Promise<task | null>`
 
 ## Parameters
-- `taskUUID` (`string`) — UUID identifying the task
+- `taskUUID` (`String`) — `uuid` identifying the task
 
 ## Returns
-`Promise<task | null>` — the task object, or `null` if no task with the given UUID exists.
+`Promise<`[`task`](../appendices/types.md#task)` | null>` — the [`task`](../appendices/types.md#task) object, or `null` if no task with the given UUID exists.
+
+## Types & references
+- [`task`](../appendices/types.md#task) — shape of the returned task
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

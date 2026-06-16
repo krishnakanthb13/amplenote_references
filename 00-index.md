@@ -18,6 +18,13 @@ Everything in this reference was derived from the official Amplenote plugin docu
 | 4 | [App Interface](https://www.amplenote.com/help/developing_amplenote_plugins/app_interface) | [`app-interface/`](./app-interface/index.md) |
 | 5 | [Note Interface](https://www.amplenote.com/help/developing_amplenote_plugins/note_interface) | [`note-interface/`](./note-interface/index.md) |
 | 6 | [Examples](https://www.amplenote.com/help/developing_amplenote_plugins/examples) | [`examples/`](./examples/index.md) |
+| 7 | [Appendix I: Types](https://www.amplenote.com/help/developing_amplenote_plugins/appendix_i) | [`appendices/types.md`](./appendices/types.md) |
+| 8 | [Appendix II: Code execution environment](https://www.amplenote.com/help/developing_amplenote_plugins/appendix_ii) | [`appendices/execution-environment.md`](./appendices/execution-environment.md) |
+| 9 | [Appendix III: Markdown content](https://www.amplenote.com/help/developing_amplenote_plugins/appendix_iii) | [`appendices/markdown-content.md`](./appendices/markdown-content.md) |
+| 10 | [Appendix IV: Loading external libraries](https://www.amplenote.com/help/developing_amplenote_plugins/appendix_iv) | [`appendices/external-libraries.md`](./appendices/external-libraries.md) |
+| 11 | [Appendix V: CORS Proxy](https://www.amplenote.com/notes/25184228-4b24-11f1-b1cd-dff3f15bb702) | [`appendices/cors-proxy.md`](./appendices/cors-proxy.md) |
+| 12 | [Guide: Getting started writing plugins](https://www.amplenote.com/help/guide_to_developing_amplenote_plugins) | [`guides/getting-started.md`](./guides/getting-started.md) |
+| 13 | [Guide: Plugin API markdown reference](https://www.amplenote.com/help/plugin_api_markdown_reference_parse_markdown) | [`guides/markdown-reference.md`](./guides/markdown-reference.md) |
 
 ---
 
@@ -31,7 +38,9 @@ amplenote_references/
 ├── actions/               ← 17 entry-point hooks (1 file each)
 ├── app-interface/         ← 55 `app.*` methods & properties (1 file each)
 ├── note-interface/        ← 21 `note.*` members (1 file each)
-└── examples/              ← 4 worked patterns
+├── examples/              ← 4 worked patterns
+├── appendices/            ← Appendices I–V: types, sandbox, markdown, libraries, CORS
+└── guides/                ← getting-started walkthrough & markdown reference
 ```
 
 Each option file follows the same template (Description · Signature · Parameters · Returns · Example · Related) and carries a breadcrumb linking back to its group index, this master index, and its original source page.
@@ -134,3 +143,24 @@ Worked, end-to-end patterns. → **[Full Examples index](./examples/index.md)**
 - [Parsing rich footnotes](./examples/parsing-rich-footnotes.md) — how images/links/connected tasks surface as markdown
 - [External services & fetch](./examples/external-service-fetch.md) — `fetch()`, CORS, Cloudflare Worker proxy
 - [LLM integration](./examples/llm-integration.md) — OpenAI / Gemini / Anthropic from a plugin
+
+---
+
+## 6. Appendices — `appendices/`
+
+Lower-level technical references. → **[Full Appendices index](./appendices/index.md)**
+
+- [Appendix I — Types](./appendices/types.md) — every API data type ([attachment](./appendices/types.md#attachment), [externalCalendarEvent](./appendices/types.md#externalcalendarevent), [image](./appendices/types.md#image), [link](./appendices/types.md#link), [moodRating](./appendices/types.md#moodrating), [noteHandle](./appendices/types.md#notehandle), [section](./appendices/types.md#section), [tag](./appendices/types.md#tag), [task](./appendices/types.md#task))
+- [Appendix II — Code execution environment](./appendices/execution-environment.md) — the sandboxed iFrame / WebView; no polyfills or transpilation
+- [Appendix III — Markdown content](./appendices/markdown-content.md) — how markdown is exchanged with plugins
+- [Appendix IV — Loading external libraries](./appendices/external-libraries.md) — CDN `<script>` and UMD-fetch patterns
+- [Appendix V — CORS proxy](./appendices/cors-proxy.md) — calling APIs that block browser CORS
+
+---
+
+## 7. Guides — `guides/`
+
+Narrative, tutorial-style references. → **[Full Guides index](./guides/index.md)**
+
+- [Getting started writing plugins](./guides/getting-started.md) — end-to-end walkthrough from first plugin to IDE workflow
+- [Plugin API markdown reference](./guides/markdown-reference.md) — the full markdown syntax plugins read and write

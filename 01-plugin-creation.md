@@ -207,3 +207,21 @@ text as a second argument:
 For the `check` / `run` form, both functions receive identical arguments to the
 underlying action (so `check` sees the same `app` and action-specific parameters that
 `run` will).
+
+## Execution Environment
+
+Plugin code runs in a **sandboxed iFrame** on web/desktop and in a **WebView** on
+mobile. The sandbox runs your code as-is: **no polyfills or transpilation are applied**,
+so use language and browser features supported by the host runtime (or load them
+yourself). See [Execution environment](./appendices/execution-environment.md) for
+details.
+
+## Related references
+
+- [Getting started](./guides/getting-started.md) — a step-by-step guide to writing your
+  first plugin.
+- [Execution environment](./appendices/execution-environment.md) — the sandboxed
+  iFrame/WebView in which plugin code runs (no polyfills or transpilation applied).
+- [External library loading](./appendices/external-libraries.md) — how to load
+  third-party libraries from within a plugin.
+- [Types](./appendices/types.md) — the type definitions used throughout the API.

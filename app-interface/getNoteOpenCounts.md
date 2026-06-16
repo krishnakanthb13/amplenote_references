@@ -11,10 +11,10 @@ Returns the number of times a note has been opened over recent rollup periods (w
 `app.getNoteOpenCounts(noteHandle: object) → Promise<object | null>`
 
 ## Parameters
-- `noteHandle` (`object`) — object identifying the note
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — object identifying the note (accepts a String `uuid` shorthand).
 
 ## Returns
-`Promise<object | null>` — an object with numeric properties (`week`, `month`, `quarter`), or `null` if the UUID is invalid.
+`Promise<Object | null>` — an object with numeric properties (`week`, `month`, `quarter`), or `null` if the UUID is invalid.
 
 ## Example
 ```javascript
@@ -23,6 +23,10 @@ async noteOption(app, noteUUID) {
   app.alert(`Opens — week: ${counts.week}, month: ${counts.month}, quarter: ${counts.quarter}`);
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note; accepts a String uuid as shorthand.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.getNoteSettings`](./getNoteSettings.md)

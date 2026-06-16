@@ -14,7 +14,7 @@ The `app.notes` object provides an alternative, more concise interface for worki
 Builds an object that allows you to more concisely call `app.*` functions for a specific note.
 
 **Parameters:**
-- `identifier` — either a `uuid` (string UUID identifying the note) or a `noteHandle`
+- `identifier` (`String` | [noteHandle](../appendices/types.md#notehandle)) — either a String `uuid` identifying the note or a [noteHandle](../appendices/types.md#notehandle).
 
 **Returns:** A `Note` interface object for the note, or `null` if the note doesn't exist or is deleted.
 
@@ -38,10 +38,10 @@ async noteOption(app) {
 Find noteHandles for all notes matching a set of filter criteria. This is an alternative interface to [`app.filterNotes`](./filterNotes.md).
 
 **Parameters (optional):**
-- `group` — filter group (string, can use comma separator for multiple)
-- `tag` — tag filter (string, comma-separated for multiple, prefix with `^` to negate)
+- `group` (`String`) — filter group (can use comma separator for multiple).
+- `tag` (`String`) — [tag](../appendices/types.md#tag) filter (comma-separated for multiple, prefix with `^` to negate).
 
-**Returns:** An array of noteHandles matching the filter parameters.
+**Returns:** `Promise<Array<`[noteHandle](../appendices/types.md#notehandle)`>>` — noteHandles matching the filter parameters.
 
 ```javascript
 async insertText(app) {
@@ -63,10 +63,10 @@ async insertText(app) {
 Create a new note. This is an alternative interface to [`app.createNote`](./createNote.md).
 
 **Parameters:**
-- `name` — string to use as the new note's name
-- `tags` — array of string tag names to apply
+- `name` (`String`) — string to use as the new note's name.
+- `tags` (`Array<String>`) — array of [tag](../appendices/types.md#tag) text strings to apply.
 
-**Returns:** A `Note` interface object for the newly created note.
+**Returns:** A `Note` interface object for the newly created note (wrapping a [noteHandle](../appendices/types.md#notehandle)).
 
 ```javascript
 async noteOption(app, noteUUID) {
@@ -83,9 +83,9 @@ async noteOption(app, noteUUID) {
 Gets a note interface for the daily jot note on the day corresponding to the given timestamp.
 
 **Parameters:**
-- `timestamp` — unix timestamp number (seconds) indicating any time on the day
+- `timestamp` (`Number`) — unix timestamp (seconds) indicating any time on the day.
 
-**Returns:** A `Note` interface object for the daily jot note.
+**Returns:** A `Note` interface object for the daily jot note (wrapping a [noteHandle](../appendices/types.md#notehandle)).
 
 ```javascript
 async noteOption(app, noteUUID) {
@@ -94,6 +94,11 @@ async noteOption(app, noteUUID) {
   app.alert(note.name);
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — accepted as an `identifier` and returned (wrapped in a `Note`) by these helpers; accepts a String uuid as shorthand.
+- [tag](../appendices/types.md#tag) — tag text format used in `filter` and `create`.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.createNote`](./createNote.md)

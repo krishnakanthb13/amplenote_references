@@ -12,7 +12,7 @@ Adds options to the per-note menu, shown when editing a specific note.
 
 ## Parameters
 - `app` — App Interface object. See [App Interface](../app-interface/index.md).
-- `noteUUID` (`String`) — The UUID of the note the option was invoked on.
+- `noteUUID` (`String` uuid) — The UUID of the note the option was invoked on. A bare uuid `String` is the shorthand form of a [noteHandle](../appendices/types.md#notehandle), so it can be passed anywhere a note handle is accepted to look the note up.
 
 ## Returns
 Nothing.
@@ -26,6 +26,11 @@ noteOption(app, noteUUID) {
   app.alert(noteUUID);
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — `noteUUID` is a `String` uuid that resolves to a note handle.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its optional `check`/`run` form.
 
 ## Related
 - [appOption](./appOption.md)

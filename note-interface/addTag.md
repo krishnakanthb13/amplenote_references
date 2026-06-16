@@ -12,10 +12,10 @@ Add a tag to the note. See `app.addNoteTag` for details.
 `note.addTag(tagName)`
 
 ## Parameters
-- `tagName` (`String`) — the name of the tag to add to the note.
+- `tagName` (`String`) — the tag text to add to the note. This is the `text` of a [tag](../appendices/types.md#tag): lowercase letters, dashes, and the `/` parent-child delimiter (e.g. `"project/active"`).
 
 ## Returns
-`Promise<boolean>` — resolves to whether the tag was successfully added.
+`Promise<Boolean>` — resolves to whether the tag was successfully added.
 
 ## Equivalent `app` method
 `app.addNoteTag({ uuid }, tagName)`
@@ -24,6 +24,10 @@ Add a tag to the note. See `app.addNoteTag` for details.
 ```javascript
 const success = await note.addTag("project/active");
 ```
+
+## Types & references
+- [tag](../appendices/types.md#tag) — the tag type; this method accepts a tag `text` String.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.removeTag`](./removeTag.md)

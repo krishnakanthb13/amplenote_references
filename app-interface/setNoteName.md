@@ -11,11 +11,11 @@ Sets a new name for the given note. Generally only fails if the note handle does
 `app.setNoteName(noteHandle: object, name: string) → Promise<boolean>`
 
 ## Parameters
-- `noteHandle` (`object`) — object identifying the note
-- `name` (`string`) — the new name for the note
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — object identifying the note (accepts a String `uuid` shorthand).
+- `name` (`String`) — the new name for the note.
 
 ## Returns
-`Promise<boolean>` — whether the name change succeeded.
+`Promise<Boolean>` — whether the name change succeeded.
 
 ## Example
 ```javascript
@@ -24,6 +24,10 @@ async noteOption(app, noteUUID) {
   await app.setNoteName(noteHandle, noteHandle.name + " more");
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note; accepts a String uuid as shorthand.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.findNote`](./findNote.md)

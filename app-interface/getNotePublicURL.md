@@ -11,10 +11,10 @@ Get a public URL for the note, if it has been published. Note that this call req
 `app.getNotePublicURL(noteHandle: object) → Promise<string | null>`
 
 ## Parameters
-- `noteHandle` (`object`) — noteHandle identifying the note
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — noteHandle identifying the note (accepts a String `uuid` shorthand).
 
 ## Returns
-`Promise<string | null>` — the public URL if published, or `null` if not published.
+`Promise<String | null>` — the public URL if published, or `null` if not published.
 
 ## Example
 ```javascript
@@ -23,6 +23,10 @@ async noteOption(app, noteUUID) {
   await app.alert("public URL: " + (publicURL || "none"));
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note (a `published` property is present on the noteHandle only when true). Accepts a String uuid as shorthand.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.publishNote`](./publishNote.md)

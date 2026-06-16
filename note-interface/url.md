@@ -15,7 +15,7 @@ Returns the String URL of the note (the in-app link to open the note).
 None.
 
 ## Returns
-`String` — the URL of the note.
+`String` — the in-app URL of the note (a link that opens the note inside Amplenote). This is not a public/shared URL; for that, see [`note.publicURL`](./publicURL.md).
 
 ## Equivalent `app` method
 —
@@ -25,6 +25,10 @@ None.
 const link = note.url();
 app.alert(`Open this note at: ${link}`);
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — the underlying note identity this URL targets.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.publicURL`](./publicURL.md)

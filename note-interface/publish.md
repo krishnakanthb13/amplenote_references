@@ -15,7 +15,7 @@ Publish the note. See `app.publishNote` for more details. Returns the public URL
 None.
 
 ## Returns
-`Promise<String>` — the public URL of the published note.
+`Promise<String>` — the public URL `String` of the published note.
 
 ## Equivalent `app` method
 `app.publishNote(noteHandle)`
@@ -25,6 +25,10 @@ None.
 const publicUrl = await note.publish();
 app.alert(`Published at ${publicUrl}`);
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — once published, the note's handle reports `published: true`.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.publicURL`](./publicURL.md)

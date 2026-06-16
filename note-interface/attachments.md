@@ -15,7 +15,7 @@ Gets a list of attachments in the note. See `app.getNoteAttachments` for details
 None.
 
 ## Returns
-`Promise<attachment[]>` — an array of attachment objects belonging to the note.
+`Promise<Array<attachment>>` — an array of [attachment](../appendices/types.md#attachment) objects belonging to the note. Each attachment carries `name`, `type` (MIME type String), and `uuid`.
 
 ## Equivalent `app` method
 `app.getNoteAttachments(noteHandle)`
@@ -25,6 +25,10 @@ None.
 const attachments = await note.attachments();
 app.alert(`Note has ${attachments.length} attachments.`);
 ```
+
+## Types & references
+- [attachment](../appendices/types.md#attachment) — the element type of the returned array.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.attachMedia`](./attachMedia.md)

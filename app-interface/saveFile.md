@@ -12,10 +12,13 @@ Save a file.
 
 ## Parameters
 - `file` (`Blob | File`) — object describing the file content
-- `filename` (`string`) — filename to use for the file
+- `filename` (`String`) — filename to use for the file
 
 ## Returns
 `Promise<void>` — resolves when the save request has been sent.
+
+## Types & references
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

@@ -34,3 +34,9 @@ task's UUID (truthy) when a task is in context, so the command shows up only the
 Because `check` returns `app.context.taskUUID`, the command is hidden whenever there is
 no task in context. Once `run` has the task object, it can read or modify any of the
 task's properties.
+
+## Types & references
+
+- `app.getTask(taskUUID)` resolves to a [task](../appendices/types.md#task) object,
+  exposing all of the properties described in the task type.
+- [Types appendix → task](../appendices/types.md#task) — the full task type definition.

@@ -30,3 +30,9 @@ Several foundational repositories are available to bootstrap a plugin:
 4. [LLM integration](./llm-integration.md) — calling OpenAI / Gemini / Anthropic with an
    API key from `app.settings`, request body and model, timeouts via `Promise.race()`,
    and error handling.
+
+## Related references
+
+- [Appendices](../appendices/index.md) — types, execution environment, markdown content,
+  external libraries, and the CORS proxy.
+- [Guides](../guides/index.md) — getting started and the markdown reference.

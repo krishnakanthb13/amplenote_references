@@ -12,7 +12,7 @@ A plugin's `linkTarget` action will be called when a plugin link (`plugin://<plu
 
 ## Parameters
 - `app` — App Interface object. See [App Interface](../app-interface/index.md).
-- `...args` (`String`, optional) — The query string from the plugin link URL.
+- `...args` (`String`, optional) — The query string carried by the clicked plugin link. When the link is `plugin://<plugin UUID>?...`, the text after `?` is passed along as the argument(s) to this action.
 
 ## Returns
 Nothing.
@@ -26,6 +26,11 @@ async linkTarget(app, ...args) {
   await app.alert("link " + JSON.stringify(args));
 }
 ```
+
+## Types & references
+- `...args` are plain `String` values parsed from the `plugin://<uuid>?...` query; this action takes no API object types.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its optional `check`/`run` form.
 
 ## Related
 - [linkOption](./linkOption.md)

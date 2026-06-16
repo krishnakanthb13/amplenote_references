@@ -11,13 +11,17 @@ Opens an embed for the plugin in the Peek Viewer, if it is available for the use
 `app.openSidebarEmbed(aspectRatioOrOptions: number | object, ...args) → Promise<boolean>`
 
 ## Parameters
-- `aspectRatioOrOptions` (`number | object`) — a number (aspect ratio) OR an object with keys:
-  - `aspectRatio` (`number`)
-  - `id` (`string`) — unique identifier for multiple embeds
-- `...args` — arguments passed to the plugin's `renderEmbed` action
+- `aspectRatioOrOptions` (`Number | Object`) — a `Number` (aspect ratio) OR an object with keys:
+  - `aspectRatio` (`Number`)
+  - `id` (`String`) — unique identifier for multiple embeds
+- `...args` (any) — arguments passed to the plugin's `renderEmbed` action
 
 ## Returns
-`Promise<boolean>` — `true` if the embed opened, `false` in the mobile app.
+`Promise<Boolean>` — `true` if the embed opened, `false` in the mobile app.
+
+## Types & references
+- [Execution environment](../appendices/execution-environment.md) — how `renderEmbed` and embed code run
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

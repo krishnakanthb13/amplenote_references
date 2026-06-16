@@ -14,7 +14,7 @@ Get the tags in the user's account.
 None.
 
 ## Returns
-`Promise<tag[]>` — array of tag objects.
+`Promise<Array<`[tag](../appendices/types.md#tag)`>>` — array of tag objects, each with `color` (hex, no `#`), `noteCount`, and `text` (lowercase, dashes, `/` delimiter).
 
 ## Example
 ```javascript
@@ -23,6 +23,10 @@ async appOption(app) {
   await app.alert("Tag count: " + tags.length);
 }
 ```
+
+## Types & references
+- [tag](../appendices/types.md#tag) — the returned array elements (`color`, `noteCount`, `text`).
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.addNoteTag`](./addNoteTag.md)

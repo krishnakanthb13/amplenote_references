@@ -51,5 +51,10 @@ Complete embed interaction (the embed calls back into the host, which prompts th
 }
 ```
 
+## Types & references
+- `...args` and the return value are any JSON-serializable values; takes no API object types.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action.
+
 ## Related
 - [renderEmbed](./renderEmbed.md)

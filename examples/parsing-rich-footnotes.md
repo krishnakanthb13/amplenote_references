@@ -31,3 +31,14 @@ Reading this:
 Because the footnote structure can be arbitrarily rich, the recommended approach is:
 most often, you'll want an LLM to parse this text (see
 [LLM integration](./llm-integration.md)) rather than hand-rolling a parser.
+
+## Types & references
+
+- [Markdown content handling](../appendices/markdown-content.md) — how Amplenote
+  represents note content (including footnote-encoded rich elements) as markdown.
+- [Markdown reference](../guides/markdown-reference.md) — the markdown formatting
+  conventions, including links, images, and footnotes.
+- The [link](../appendices/types.md#link) type — the structure of links inline in note
+  content.
+- The [task](../appendices/types.md#task) type — the structure of connected tasks that
+  can appear within footnote payloads.

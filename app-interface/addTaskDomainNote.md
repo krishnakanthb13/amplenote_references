@@ -11,11 +11,15 @@ Ensure the specified note is included in the specified task domain. If the note 
 `app.addTaskDomainNote(taskDomainUUID: string, noteHandle: object) → Promise<boolean>`
 
 ## Parameters
-- `taskDomainUUID` (`string`) — task domain UUID (obtainable via `getTaskDomains`)
-- `noteHandle` (`object`) — object identifying the note to add to the task domain
+- `taskDomainUUID` (`String`) — task domain `uuid` (obtainable via `getTaskDomains`)
+- `noteHandle` ([`noteHandle`](../appendices/types.md#notehandle)) — object identifying the note to add to the task domain (e.g. `{ uuid }`)
 
 ## Returns
-`Promise<boolean>` — whether the note was added or already included; returns `false` for an invalid note handle.
+`Promise<Boolean>` — whether the note was added or already included; returns `false` for an invalid note handle.
+
+## Types & references
+- [`noteHandle`](../appendices/types.md#notehandle) — note identifier accepted as the second argument
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

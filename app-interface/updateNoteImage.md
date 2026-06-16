@@ -11,12 +11,12 @@ Update an image in a specific note. Throws if the given markdown is not valid in
 `app.updateNoteImage(noteHandle: object, image: object, updates: object) → Promise<boolean>`
 
 ## Parameters
-- `noteHandle` (`object`) — noteHandle identifying the note containing the image
-- `image` (`object`) — image object (only `index` and `src` keys are necessary)
-- `updates` (`object`) — image properties to update (excluding `index`)
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — noteHandle identifying the note containing the image (accepts a String `uuid` shorthand).
+- `image` ([image](../appendices/types.md#image)) — the image to update (only the `index` and `src` keys are necessary), as returned by [`app.getNoteImages`](./getNoteImages.md).
+- `updates` (`Object`) — image properties to update, excluding the read-only `index` — e.g. `caption` (markdown), `width` (px), `src`, `text`.
 
 ## Returns
-`Promise<boolean>` — whether the image could be updated.
+`Promise<Boolean>` — whether the image could be updated.
 
 ## Example
 ```javascript
@@ -29,6 +29,12 @@ async noteOption(app, noteUUID) {
   }
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note; accepts a String uuid as shorthand.
+- [image](../appendices/types.md#image) — the `image` argument (`caption`, `index` read-only, `src`, `text`, optional `width`); the `caption` accepts markdown.
+- [Markdown reference guide](../guides/markdown-reference.md) — valid markdown for an image caption.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.getNoteImages`](./getNoteImages.md)

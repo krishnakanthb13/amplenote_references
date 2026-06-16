@@ -11,10 +11,10 @@ Delete a note. Users can restore deleted notes for 30 days after they are first 
 `app.deleteNote(noteHandle: object) → Promise<boolean>`
 
 ## Parameters
-- `noteHandle` (`object`) — object identifying the note to delete
+- `noteHandle` ([noteHandle](../appendices/types.md#notehandle)) — object identifying the note to delete (accepts a String `uuid` shorthand).
 
 ## Returns
-`Promise<boolean>` — whether the note existed and was deleted.
+`Promise<Boolean>` — whether the note existed and was deleted.
 
 ## Example
 ```javascript
@@ -22,6 +22,10 @@ async noteOption(app, noteUUID) {
   await app.deleteNote({ uuid: noteUUID });
 }
 ```
+
+## Types & references
+- [noteHandle](../appendices/types.md#notehandle) — identifies the note; accepts a String uuid as shorthand.
+- [App Interface index](./index.md)
 
 ## Related
 - [`app.createNote`](./createNote.md)

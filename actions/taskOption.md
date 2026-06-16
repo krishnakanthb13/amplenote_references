@@ -12,7 +12,7 @@ Adds options to the task commands menu (invoked when typing `!` in the body of a
 
 ## Parameters
 - `app` — App Interface object. See [App Interface](../app-interface/index.md).
-- `task` (`Object`) — The task the option was invoked on.
+- `task` ([task](../appendices/types.md#task)) — The task the option was invoked on. Exposes fields such as `uuid`, `content` (markdown), `noteUUID`, `startAt`/`endAt`/`deadline` (Integer Unix UTC timestamps), `score`, `important`, and `urgent`.
 
 ## Returns
 Nothing.
@@ -26,6 +26,11 @@ taskOption(app, task) {
   app.alert(JSON.stringify(task));
 }
 ```
+
+## Types & references
+- [task](../appendices/types.md#task) — the object passed as `task`.
+- [Actions index](./index.md)
+- [Plugin Creation](../01-plugin-creation.md) — registering the action and its optional `check`/`run` form.
 
 ## Related
 - [eventOption](./eventOption.md)

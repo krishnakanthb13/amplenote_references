@@ -11,14 +11,25 @@ Inserts a new task at the beginning of a note. Throws if the provided content is
 `app.insertTask(noteHandle: object, taskObject: object) → Promise<string>`
 
 ## Parameters
-- `noteHandle` (`object`) — object identifying the note to insert the task into
-- `taskObject` (`object`) — task object with optional attributes:
-  - `content` (`string`) — markdown-formatted content for the task
-  - `hideUntil` (`number`) — unix timestamp in seconds for the "Hide until" time
-  - `startAt` (`number`) — unix timestamp in seconds for the "Start at" time
+- `noteHandle` ([`noteHandle`](../appendices/types.md#notehandle)) — object identifying the note to insert the task into (e.g. `{ uuid }`)
+- `taskObject` (`Object`) — a task-like object. `content` is the only required field; the rest are optional writable [`task`](../appendices/types.md#task) fields:
+  - `content` (`String`) — [markdown](../guides/markdown-reference.md)-formatted content for the task
+  - `startAt` (`Integer | null`) — Unix timestamp (UTC seconds) for the "Start at" time
+  - `endAt` (`Integer | null`) — Unix timestamp (UTC seconds) for the end time; must be after `startAt` and requires `startAt`
+  - `hideUntil` (`Integer | null`) — Unix timestamp (UTC seconds) for the "Hide until" time
+  - `deadline` (`Integer | null`) — Unix timestamp (UTC seconds) for the deadline
+  - `important` (`Boolean`) — whether the task is flagged important
+  - `urgent` (`Boolean`) — whether the task is flagged urgent
+  - `repeat` (`String | null`) — an RRULE recurrence string
 
 ## Returns
-`Promise<string>` — the UUID of the newly created task.
+`Promise<String>` — the `uuid` of the newly created [`task`](../appendices/types.md#task).
+
+## Types & references
+- [`task`](../appendices/types.md#task) — writable fields accepted in `taskObject`
+- [`noteHandle`](../appendices/types.md#notehandle) — note identifier accepted as the first argument
+- [Markdown reference](../guides/markdown-reference.md) — formatting allowed in `content`
+- [App Interface index](./index.md)
 
 ## Example
 ```javascript

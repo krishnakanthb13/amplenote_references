@@ -13,7 +13,7 @@ Replaces the content of the entire note, or a section of the note, with new cont
 
 ## Parameters
 - `markdown` (`String`) — the new markdown content.
-- `sectionIndex` (`Number`, optional) — when provided, replaces only the content of the specified section instead of the entire note.
+- `sectionIndex` (`Number`, optional) — when provided, replaces only the content of the specified [section](../appendices/types.md#section) (its `index`) instead of the entire note.
 
 ## Returns
 `Promise<void>`
@@ -26,6 +26,11 @@ Replaces the content of the entire note, or a section of the note, with new cont
 // Replace the whole note
 await note.replaceContent("All new content for the note.");
 ```
+
+## Types & references
+- Accepts a markdown `String`.
+- [section](../appendices/types.md#section) — the section whose `index` may be targeted via `sectionIndex`; obtain sections from [`note.sections`](./sections.md).
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.insertContent`](./insertContent.md)

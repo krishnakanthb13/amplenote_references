@@ -15,7 +15,7 @@ Get all inline images in the note. See `app.getNoteImages` for more details.
 None.
 
 ## Returns
-`Promise<image[]>` — an array of inline image objects in the note.
+`Promise<Array<image>>` — an array of inline [image](../appendices/types.md#image) objects in the note. Each image carries `caption` (markdown), `index` (read-only), `src`, `text` (OCR), and optional `width`.
 
 ## Equivalent `app` method
 `app.getNoteImages(noteHandle)`
@@ -25,6 +25,10 @@ None.
 const images = await note.images();
 app.alert(`Note has ${images.length} inline images.`);
 ```
+
+## Types & references
+- [image](../appendices/types.md#image) — the element type of the returned array.
+- [Note Interface index](./index.md)
 
 ## Related
 - [`note.updateImage`](./updateImage.md)
