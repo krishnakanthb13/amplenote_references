@@ -111,6 +111,7 @@ The `app` object, passed as the first argument to every action handler. Nearly a
 | **Shortcuts** | [addShortcut](./app-interface/addShortcut.md) · [getShortcuts](./app-interface/getShortcuts.md) · [removeShortcut](./app-interface/removeShortcut.md) |
 | **Mood Tracking** | [recordMoodRating](./app-interface/recordMoodRating.md) · [getMoodRatings](./app-interface/getMoodRatings.md) · [updateMoodRating](./app-interface/updateMoodRating.md) |
 | **Calendar** | [getExternalCalendarEvents](./app-interface/getExternalCalendarEvents.md) |
+| **People & Contacts** | [getPeople](./app-interface/getPeople.md) |
 | **Plugin Communication** | [callPlugin](./app-interface/callPlugin.md) |
 | **Embeds** | [openEmbed](./app-interface/openEmbed.md) · [openSidebarEmbed](./app-interface/openSidebarEmbed.md) |
 | **Utilities** | [evaluateExpression](./app-interface/evaluateExpression.md) · [htmlFromContent](./app-interface/htmlFromContent.md) · [saveFile](./app-interface/saveFile.md) · [writeClipboardData](./app-interface/writeClipboardData.md) |

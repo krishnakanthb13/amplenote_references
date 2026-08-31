@@ -74,6 +74,9 @@ The `app` object is passed as the first argument to every action handler. Nearly
 ## Calendar
 - [`app.getExternalCalendarEvents`](./getExternalCalendarEvents.md) — get cached external calendar events
 
+## People & Contacts
+- [`app.getPeople`](./getPeople.md) — list people known to the current user
+
 ## Plugin Communication
 - [`app.callPlugin`](./callPlugin.md) — call another plugin's `onPluginCall`
 
