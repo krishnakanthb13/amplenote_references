@@ -90,6 +90,34 @@ async appOption(app) {
 }
 ```
 
+## Example: Fetching a Plugin's Own Attachment Payload
+
+Useful when a plugin ships a large payload (an embed document, a compiled bundle) as an attachment on its own note instead of inlining it into the code block — see [Large plugins: keeping the payload out of the code block](../01-plugin-creation.md#large-plugins-keeping-the-payload-out-of-the-code-block) on the Plugin creation page.
+
+```javascript
+async renderEmbed(app) {
+  if (app.context.setEmbedHTML) {
+    app.context.setEmbedHTML(`<!-- spinner markup -->`); // paint before awaiting the network
+  }
+  try {
+    const attachments = await app.getNoteAttachments(app.context.pluginUUID);
+    const attachment = attachments.find(attachment => attachment.name === "build.html.json");
+    if (!attachment) throw new Error("build.html.json attachment not found");
+    return this._getAttachmentContent(app, attachment.uuid);
+  } catch (error) {
+    return `<div><em>renderEmbed error:</em> ${ error.toString() }</div>`;
+  }
+},
+
+async _getAttachmentContent(app, attachmentUUID) {
+  const url = await app.getAttachmentURL(attachmentUUID);
+  const proxyURL = new URL("https://plugins.amplenote.com/cors-proxy");
+  proxyURL.searchParams.set("apiurl", url);
+  const response = await fetch(proxyURL);
+  return response.text();
+}
+```
+
 ## Notes
 
 - The `apiurl` query parameter must be set on the proxy URL; requests without it will not reach an upstream server.

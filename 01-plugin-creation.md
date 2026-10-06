@@ -210,6 +210,48 @@ For the `check` / `run` form, both functions receive identical arguments to the
 underlying action (so `check` sees the same `app` and action-specific parameters that
 `run` will).
 
+## Large plugins: keeping the payload out of the code block
+
+The rule above doesn't change: the first code block in the note is still the plugin's actions, and that's still required. But if your plugin needs to ship a large payload — a compiled embed document, a client bundle, a big data file — you don't have to inline it into that code block. You can upload it as an attachment on the plugin note instead, and fetch it at render time.
+
+**Why this matters:** a multi-hundred-KB code block makes the plugin note itself slow to open, in every client, for every user, whether or not the plugin is actually being used. Keeping the code block lean and shipping the bulk of the payload as an attachment avoids that cost.
+
+> **Note:** this is a delivery mechanism for the payload your actions load, not a substitute for the actions themselves. The code block is still required, and it's still where your plugin's action functions live.
+
+Here's the pattern, based on the published tldraw plugin and the official embed starter repo:
+
+```javascript
+async renderEmbed(app) {
+  if (app.context.setEmbedHTML) {
+    app.context.setEmbedHTML(`<!-- spinner markup -->`); // paint before awaiting the network
+  }
+  try {
+    const attachments = await app.getNoteAttachments(app.context.pluginUUID);
+    const attachment = attachments.find(attachment => attachment.name === "build.html.json");
+    if (!attachment) throw new Error("build.html.json attachment not found");
+    return this._getAttachmentContent(app, attachment.uuid);
+  } catch (error) {
+    return `<div><em>renderEmbed error:</em> ${ error.toString() }</div>`;
+  }
+},
+
+async _getAttachmentContent(app, attachmentUUID) {
+  const url = await app.getAttachmentURL(attachmentUUID);
+  const proxyURL = new URL("https://plugins.amplenote.com/cors-proxy");
+  proxyURL.searchParams.set("apiurl", url);
+  const response = await fetch(proxyURL);
+  return response.text();
+}
+```
+
+`app.context.pluginUUID` is the plugin note's own UUID, so `getNoteAttachments` here lists attachments on the plugin note itself rather than some other note. See [`app.getNoteAttachments`](./app-interface/getNoteAttachments.md), [`app.getAttachmentURL`](./app-interface/getAttachmentURL.md), and [Appendix V: CORS proxy](./appendices/cors-proxy.md) for the full API.
+
+**Two constraints worth knowing before choosing this approach:**
+1. **Requires an online client.** `getAttachmentURL` mints a temporary URL and fails offline, so a plugin using this pattern can't render its payload offline — a plugin with a fully self-contained code block can.
+2. **The attachment reference must stay in the note body.** `getNoteAttachments` only returns attachments that are still referenced in the note, so removing the visible link from the note body hides the file from this lookup even though the file itself remains uploaded.
+
+Each render is also an extra network round trip, which is why the example above paints a loading state with `app.context.setEmbedHTML` before awaiting the fetch.
+
 ## Execution Environment
 
 Plugin code runs in a **sandboxed iFrame** on web/desktop and in a **WebView** on

@@ -31,6 +31,7 @@ The `app` object is passed as the first argument to every action handler. Nearly
 - [`app.getTask`](./getTask.md) — get the details of a single task
 - [`app.updateTask`](./updateTask.md) — update a task's properties or content
 - [`app.getCompletedTasks`](./getCompletedTasks.md) — get tasks completed in a time range
+- [`app.getPreviousTaskInstances`](./getPreviousTaskInstances.md) — get previous instances of a repeating task (async iterable)
 - [`app.getTaskDomains`](./getTaskDomains.md) — get the user's configured Task Domains
 - [`app.getTaskDomainTasks`](./getTaskDomainTasks.md) — get tasks in a task domain (async iterable)
 - [`app.addTaskDomainNote`](./addTaskDomainNote.md) — add a note to a task domain

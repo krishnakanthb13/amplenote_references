@@ -36,7 +36,7 @@ amplenote_references/
 ├── 00-overview.md         ← what plugins are; the big picture
 ├── 01-plugin-creation.md  ← the anatomy of a plugin note
 ├── actions/               ← 18 entry-point hooks (1 file each)
-├── app-interface/         ← 55 `app.*` methods & properties (1 file each)
+├── app-interface/         ← 57 `app.*` methods & properties (1 file each)
 ├── note-interface/        ← 21 `note.*` members (1 file each)
 ├── examples/              ← 4 worked patterns
 ├── appendices/            ← Appendices I–V: types, sandbox, markdown, libraries, CORS
@@ -103,7 +103,7 @@ The `app` object, passed as the first argument to every action handler. Nearly a
 | **Note Management** | [createNote](./app-interface/createNote.md) · [findNote](./app-interface/findNote.md) · [deleteNote](./app-interface/deleteNote.md) · [getNoteContent](./app-interface/getNoteContent.md) · [setNoteName](./app-interface/setNoteName.md) · [insertNoteContent](./app-interface/insertNoteContent.md) · [replaceNoteContent](./app-interface/replaceNoteContent.md) · [app.notes object](./app-interface/notes-object.md) |
 | **Filtering & Search** | [filterNotes](./app-interface/filterNotes.md) · [searchNotes](./app-interface/searchNotes.md) · [getNoteBacklinks](./app-interface/getNoteBacklinks.md) · [getNoteBacklinkContents](./app-interface/getNoteBacklinkContents.md) |
 | **Tags & Organization** | [addNoteTag](./app-interface/addNoteTag.md) · [removeNoteTag](./app-interface/removeNoteTag.md) · [getTags](./app-interface/getTags.md) |
-| **Tasks** | [getNoteTasks](./app-interface/getNoteTasks.md) · [insertTask](./app-interface/insertTask.md) · [getTask](./app-interface/getTask.md) · [updateTask](./app-interface/updateTask.md) · [getCompletedTasks](./app-interface/getCompletedTasks.md) · [getTaskDomains](./app-interface/getTaskDomains.md) · [getTaskDomainTasks](./app-interface/getTaskDomainTasks.md) · [addTaskDomainNote](./app-interface/addTaskDomainNote.md) |
+| **Tasks** | [getNoteTasks](./app-interface/getNoteTasks.md) · [insertTask](./app-interface/insertTask.md) · [getTask](./app-interface/getTask.md) · [updateTask](./app-interface/updateTask.md) · [getCompletedTasks](./app-interface/getCompletedTasks.md) · [getPreviousTaskInstances](./app-interface/getPreviousTaskInstances.md) · [getTaskDomains](./app-interface/getTaskDomains.md) · [getTaskDomainTasks](./app-interface/getTaskDomainTasks.md) · [addTaskDomainNote](./app-interface/addTaskDomainNote.md) |
 | **Media & Attachments** | [attachNoteMedia](./app-interface/attachNoteMedia.md) · [getNoteAttachments](./app-interface/getNoteAttachments.md) · [getAttachmentURL](./app-interface/getAttachmentURL.md) · [getNoteImages](./app-interface/getNoteImages.md) · [updateNoteImage](./app-interface/updateNoteImage.md) |
 | **Publishing** | [publishNote](./app-interface/publishNote.md) · [unpublishNote](./app-interface/unpublishNote.md) · [getNotePublicURL](./app-interface/getNotePublicURL.md) |
 | **Note Metadata** | [getNoteOpenCounts](./app-interface/getNoteOpenCounts.md) · [getNoteSections](./app-interface/getNoteSections.md) · [getNoteSettings](./app-interface/getNoteSettings.md) · [setNoteSetting](./app-interface/setNoteSetting.md) · [getNoteURL](./app-interface/getNoteURL.md) |

@@ -62,11 +62,12 @@ sub-actions, or in the advanced `check`/`run` form (see
 
 ## Key Capabilities
 
-Across the 2024–2025 updates, plugins can:
+Across the 2024–2026 updates, plugins can:
 
-- Create, read, and manage **tasks**.
-- Work with **note attachments** and images.
-- Render **embeds** (custom UI in a note, sidebar, or elsewhere).
+- Create, read, and manage **tasks**, including previous instances of repeating tasks via [`app.getPreviousTaskInstances`](./app-interface/getPreviousTaskInstances.md).
+- Propose calendar task schedules via the [`suggestScheduledTasks`](./actions/suggestScheduledTasks.md) action hook.
+- Work with **note attachments** and images, including shipping large plugin payloads out-of-band as attachments.
+- Render **embeds** (custom UI in a note, sidebar, or elsewhere) with dynamic height control via `window.setAmplenoteEmbedHeight` and plugin communication via `window.callAmplenotePlugin`.
 - Perform **clipboard** operations.
 - Retrieve **backlinks** for a note.
 - **Evaluate expressions** and otherwise compute over note content.
