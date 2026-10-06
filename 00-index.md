@@ -35,7 +35,7 @@ amplenote_references/
 ├── 00-index.md            ← you are here (master index)
 ├── 00-overview.md         ← what plugins are; the big picture
 ├── 01-plugin-creation.md  ← the anatomy of a plugin note
-├── actions/               ← 17 entry-point hooks (1 file each)
+├── actions/               ← 18 entry-point hooks (1 file each)
 ├── app-interface/         ← 55 `app.*` methods & properties (1 file each)
 ├── note-interface/        ← 21 `note.*` members (1 file each)
 ├── examples/              ← 4 worked patterns
@@ -86,6 +86,7 @@ Entry-point hooks. The plugin object exposes a function whose **name matches the
 - [`onPluginCall`](./actions/onPluginCall.md) — handle `app.callPlugin` from another plugin
 
 **Tasks**
+- [`suggestScheduledTasks`](./actions/suggestScheduledTasks.md) — propose scheduling for one or more tasks
 - [`suggestTaskTargetNotes`](./actions/suggestTaskTargetNotes.md) — suggest target notes for a task
 
 **Settings**
@@ -151,7 +152,7 @@ Worked, end-to-end patterns. → **[Full Examples index](./examples/index.md)**
 
 Lower-level technical references. → **[Full Appendices index](./appendices/index.md)**
 
-- [Appendix I — Types](./appendices/types.md) — every API data type ([attachment](./appendices/types.md#attachment), [externalCalendarEvent](./appendices/types.md#externalcalendarevent), [image](./appendices/types.md#image), [link](./appendices/types.md#link), [moodRating](./appendices/types.md#moodrating), [noteHandle](./appendices/types.md#notehandle), [section](./appendices/types.md#section), [tag](./appendices/types.md#tag), [task](./appendices/types.md#task))
+- [Appendix I — Types](./appendices/types.md) — every API data type ([attachment](./appendices/types.md#attachment), [externalCalendarEvent](./appendices/types.md#externalcalendarevent), [group](./appendices/types.md#group), [image](./appendices/types.md#image), [link](./appendices/types.md#link), [moodRating](./appendices/types.md#moodrating), [noteHandle](./appendices/types.md#notehandle), [person](./appendices/types.md#person), [section](./appendices/types.md#section), [tag](./appendices/types.md#tag), [task](./appendices/types.md#task), [taskDomain](./appendices/types.md#taskdomain))
 - [Appendix II — Code execution environment](./appendices/execution-environment.md) — the sandboxed iFrame / WebView; no polyfills or transpilation
 - [Appendix III — Markdown content](./appendices/markdown-content.md) — how markdown is exchanged with plugins
 - [Appendix IV — Loading external libraries](./appendices/external-libraries.md) — CDN `<script>` and UMD-fetch patterns

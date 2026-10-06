@@ -7,13 +7,16 @@ This appendix documents the structured object types that the Amplenote plugin AP
 Types in this reference:
 [attachment](#attachment) ·
 [externalCalendarEvent](#externalcalendarevent) ·
+[group](#group) ·
 [image](#image) ·
 [link](#link) ·
 [moodRating](#moodrating) ·
 [noteHandle](#notehandle) ·
+[person](#person) ·
 [section](#section) ·
 [tag](#tag) ·
-[task](#task)
+[task](#task) ·
+[taskDomain](#taskdomain)
 
 ---
 
@@ -45,6 +48,31 @@ Describes an event sourced from an external calendar provider (e.g. Google Calen
 | `end` | Date | When the event ends. |
 | `start` | Date | When the event starts. |
 | `title` | String | The event's title. |
+
+---
+
+### group
+
+A string that defines a note filter group. Used with `app.filterNotes({ group })` and group search queries. Can be one of the following:
+
+| Group String | Notes Matched |
+|--------------|---------------|
+| `"archived"` | Notes that are archived (either manually or auto-archived). |
+| `"created"` | Notes that were created by the current user. |
+| `"indexing"` | Notes that need their content downloaded to the local device. |
+| `"notCreated"` | Notes that were not created by the current user. |
+| `"person"` | Notes that represent a person. |
+| `"plugin"` | Notes that are active, enabled plugins. |
+| `"public"` | Notes that are shared publicly. |
+| `"saving"` | Notes that are pending or in the midst of being persisted to the server. |
+| `"shareSent"` | Notes the current user shared with others. |
+| `"shared"` | Notes that are shared with other users. |
+| `"stale"` | Notes that need to have new versions downloaded and processed. |
+| `"taskLists"` | Notes that have open (non-completed) tasks in them. |
+| `"thisWeek"` | Notes that have been modified in the current calendar week. |
+| `"today"` | Notes that have been updated since the start of the current day. |
+| `"untagged"` | Notes that do not have any tags applied. |
+| `"vault"` | End-to-end encrypted Vault notes. |
 
 ---
 
@@ -112,6 +140,20 @@ When returned from the API, a `noteHandle` may include the following properties:
 
 ---
 
+### person
+
+Describes another user known to the current user (e.g. collaborators returned by `app.getPeople`).
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `active` | String | ISO 8601 date string indicating the latest day the user was active on Amplenote (used any client). |
+| `avatar` | Object | Object with only one of `imageURL` (string URL for avatar image) or `text` (short initials string for avatar display). |
+| `name` | String | The display name (may be an email address) to display for the user. |
+| `sharing` | Object | Object with `notes` (Array of note UUID strings shared with this user) and `tags` (Array of shared tag strings). |
+| `uuid` | String | Unique identifier that uniquely identifies this user. |
+
+---
+
 ### section
 
 Describes a section of a note — a chunk of content delimited by headings (or horizontal rules).
@@ -165,3 +207,15 @@ Describes a task. Timestamps are Unix timestamps in UTC seconds.
 | `startAt` | Integer or null | Unix UTC timestamp of the task's start, or `null`. |
 | `urgent` | Boolean | Whether the task is flagged urgent. |
 | `uuid` | String | The task's unique identifier. |
+
+---
+
+### taskDomain
+
+Describes a single task domain in the user's account.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `name` | String | Display name of the Task Domain. |
+| `notes` | Array of [noteHandle](#notehandle) | Array of note handles for each note in the Task Domain. Includes notes that are part of the Task Domain due to tags, notes individually assigned, or all notes. |
+| `uuid` | String | Unique identifier that uniquely identifies the Task Domain. |

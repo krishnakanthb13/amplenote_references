@@ -163,6 +163,127 @@ async onEmbedCall(app, value) {
 }
 ```
 
+---
+
+### `app.context.closeEmbed`
+**Signature:** `closeEmbed() → Promise<void>`
+
+Only present in `renderEmbed` and `onEmbedCall` action functions, when an embed is rendered from a note context (`app.context.renderEmbedTarget === "note"`). Calling this function will immediately close and remove the embed that is being rendered.
+
+---
+
+### `app.context.getStyleProperties`
+**Signature:** `getStyleProperties() → Promise<String>`
+
+Only present in `renderEmbed` and `onEmbedCall` action functions, returns a string of CSS containing the custom properties defining themed light/dark colors for the app. This string can be included in a `<style>` element to apply themed colors, which can then be referenced in CSS in the embed (e.g. `color: var(--color-text-high-contrast);`).
+
+```javascript
+async renderEmbed(app) {
+  const styleProperties = await app.context.getStyleProperties();
+  return `
+    <style>
+      :root { ${ styleProperties } }
+    </style>
+    <div style="padding: 16px; font-family: sans-serif; background: #d7e9fb;">
+      <pre>${ styleProperties }</pre>
+    </div>
+  `;
+}
+```
+
+---
+
+### `app.context.refreshNotesList`
+**Signature:** `refreshNotesList() → Promise<Boolean>`
+
+Attempts to ensure the notes list is up to date. Returning `true` indicates the notes list is up to date to within approximately one minute, while a `false` return value indicates that the notes list could not be updated. Refreshing the notes list ensures metadata about notes is up to date — it does not indicate that content in updated notes has been retrieved and updated in the client's datastore.
+
+```javascript
+async appOption(app) {
+  const wasRefreshed = await app.context.refreshNotesList();
+  await app.alert("Notes list is (roughly) up to date: " + wasRefreshed);
+}
+```
+
+---
+
+### `app.context.refreshSettings`
+**Signature:** `refreshSettings() → Promise<Object>`
+
+`app.settings` is updated on a lower tier of sync urgency than most data. To ensure fresh settings are available (e.g. from other devices/clients that may be modifying the plugin's settings), `refreshSettings` can be used. Note this is likely to make a web request that can potentially take some time.
+
+```javascript
+async noteOption(app, noteUUID) {
+  const latestSettings = await app.context.refreshSettings();
+}
+```
+
+---
+
+### `app.context.setEmbedHTML`
+**Signature:** `setEmbedHTML(html: String) → void`
+
+Only defined in `renderEmbed` action functions. Call with an HTML string to immediately render it in the embed — this allows for an initial loading screen to be placed in the embed while `renderEmbed` performs some longer work to produce the final embed content.
+
+```javascript
+async renderEmbed(app) {
+  app.context.setEmbedHTML("<div>Loading...</div>");
+  await new Promise(resolve => setTimeout(resolve, 5000));
+  return "<div>Done</div>";
+}
+```
+
+---
+
+### `app.context.setScheduledTasks`
+**Signature:** `setScheduledTasks(scheduledTasks: Array<Object>) → Promise<void>`
+
+Only available in [`suggestScheduledTasks`](../actions/suggestScheduledTasks.md) — call to set initial or progressive suggestions before returning from the action. Useful if the calculation of suggested tasks is slow and there are initial suggestions that can be presented to the user while the final suggestions are being determined.
+
+```javascript
+async suggestScheduledTasks(app, { startAt, schedulableTasks }) {
+  const schedulableTask = schedulableTasks[0];
+  if (!schedulableTask) return [];
+
+  const scheduledTasks = [
+    { explanation: "Very basic scheduling", startAt, taskUUID: schedulableTask.uuid },
+  ];
+
+  await app.context.setScheduledTasks(scheduledTasks);
+  await new Promise(resolve => setTimeout(resolve, 5000));
+  return scheduledTasks;
+}
+```
+
+---
+
+### `app.context.setStatus`
+**Signature:** `setStatus(status: String) → void`
+
+Call with a string argument to set a status while the plugin is executing, which will be displayed to the user when listing running plugins.
+
+```javascript
+async appOption(app) {
+  app.context.setStatus("Reticulating splines...");
+  await new Promise(resolve => setTimeout(resolve, 5000));
+}
+```
+
+---
+
+### `app.context.setTaskTargetNotes`
+**Signature:** `setTaskTargetNotes(suggestions: Array<noteHandle | String>) → Promise<void>`
+
+Only available in [`suggestTaskTargetNotes`](../actions/suggestTaskTargetNotes.md) — call to set some results immediately before returning from the action with the final suggestions.
+
+```javascript
+async suggestTaskTargetNotes(app, task, suggestedNoteHandles) {
+  const suggestions = suggestedNoteHandles.toReversed();
+  await app.context.setTaskTargetNotes(suggestions);
+  return suggestions;
+}
+```
+
 ## Types & references
 - [`link`](../appendices/types.md#link) — shape of `app.context.link` (and `updates` for `updateLink`)
 - [Markdown reference](../guides/markdown-reference.md) — format of `selectionContent` and `replaceSelection` arguments

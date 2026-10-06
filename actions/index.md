@@ -32,6 +32,7 @@ Many actions also support an optional `check` function. Define the action as an 
 - [`onPluginCall`](./onPluginCall.md) — Handle calls from another plugin via `app.callPlugin`.
 
 ## Tasks
+- [`suggestScheduledTasks`](./suggestScheduledTasks.md) — Propose scheduling for one or more tasks, which the user can accept or dismiss on a per-task basis.
 - [`suggestTaskTargetNotes`](./suggestTaskTargetNotes.md) — Suggest an ordered set of notes a task could be added to.
 
 ## Settings
